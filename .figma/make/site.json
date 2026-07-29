@@ -1,0 +1,10 @@
+{
+  "description": "Showcasing premium digital experiences, this platform empowers brands with innovative design, strategic identity, and cutting-edge technology for a sophisticated online presence.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

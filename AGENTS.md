@@ -1,4 +1,4 @@
-# figma-make-app
+# astera-studio
 
 React + Vite + Tailwind CSS project running inside Figma Make.
 

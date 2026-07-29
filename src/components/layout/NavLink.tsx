@@ -1,0 +1,31 @@
+import { useState } from 'react'
+import { C } from '@/theme/colors'
+import { F } from '@/theme/fonts'
+
+type NavLinkProps = {
+  label: string
+}
+
+export function NavLink({ label }: NavLinkProps) {
+  const [hovered, setHovered] = useState(false)
+
+  return (
+    <a
+      href="#"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        fontFamily: F.sans,
+        fontSize: '0.7rem',
+        letterSpacing: '0.16em',
+        color: C.white,
+        opacity: hovered ? 0.9 : 0.42,
+        textDecoration: 'none',
+        textTransform: 'uppercase',
+        transition: 'opacity 0.3s',
+      }}
+    >
+      {label}
+    </a>
+  )
+}

@@ -1,0 +1,22 @@
+import { useState } from 'react'
+import { C } from '@/theme/colors'
+import { F } from '@/theme/fonts'
+
+type FooterLinkProps = {
+  label: string
+}
+
+export function FooterLink({ label }: FooterLinkProps) {
+  const [h, setH] = useState(false)
+
+  return (
+    <a
+      href="#"
+      onMouseEnter={() => setH(true)}
+      onMouseLeave={() => setH(false)}
+      style={{ fontFamily: F.sans, fontSize: '0.63rem', letterSpacing: '0.15em', color: C.white, opacity: h ? 0.62 : 0.28, textDecoration: 'none', textTransform: 'uppercase', transition: 'opacity 0.3s' }}
+    >
+      {label}
+    </a>
+  )
+}

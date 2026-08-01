@@ -4,24 +4,8 @@ import SectionHeading from '@/components/ui/SectionHeading'
 import HoverButton from '@/components/ui/HoverButton'
 import { NavLink } from '@/components/layout/NavLink'
 import OrbitalDiagram from '@/components/graphics/OrbitalDiagram'
-
-// ─── DESIGN TOKENS ────────────────────────────────────────────────────────────
-
-const C = {
-  black:     '#090909',
-  white:     '#F4F1EA',
-  orange:    '#E86A33',
-  turquoise: '#467978',
-  deep:      '#224B5A',
-  graphite:  '#222222',
-  gray:      '#D8D8D8',
-}
-
-const F = {
-  display: "'Big Shoulders Display', sans-serif",
-  serif:   "'Playfair Display', serif",
-  sans:    "'DM Sans', sans-serif",
-}
+import { C } from '@/theme/colors'
+import { F } from '@/theme/fonts'
 
 // ─── ORBITAL DIAGRAM ─────────────────────────────────────────────────────────
 

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { C } from '@/theme/colors'
 import { F } from '@/theme/fonts'
+import { M } from '@/theme/motion'
 
 type HoverButtonProps = {
   variant: 'primary' | 'ghost'
@@ -34,7 +35,7 @@ export default function HoverButton({
           padding: pad,
           border: 'none',
           cursor: 'pointer',
-          transition: 'background-color 0.35s ease',
+          transition: `background-color ${M.uiFeedback}`,
           display: 'inline-block',
         }}
       >
@@ -62,7 +63,7 @@ export default function HoverButton({
             : 'rgba(244,241,234,0.18)'
         }`,
         cursor: 'pointer',
-        transition: 'all 0.35s ease',
+        transition: `all ${M.uiFeedback}`,
         display: 'inline-block',
       }}
     >

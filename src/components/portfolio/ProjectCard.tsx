@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { C } from '@/theme/colors'
 import { F } from '@/theme/fonts'
+import { M } from '@/theme/motion'
 
 type ProjectCardProps = {
   proj: {
@@ -65,7 +66,7 @@ export function ProjectCard({ proj }: ProjectCardProps) {
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           color: C.white, fontSize: '0.85rem',
           opacity: h ? 1 : 0, transform: h ? 'scale(1)' : 'scale(0.75)',
-          transition: 'all 0.35s ease',
+          transition: `all ${M.uiFeedback}`,
         }}>
           ↗
         </div>

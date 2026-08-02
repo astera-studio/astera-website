@@ -10,7 +10,7 @@ export function Footer() {
           <div style={{ fontFamily: F.display, fontWeight: 900, fontSize: '1.2rem', letterSpacing: '0.14em', color: C.white, marginBottom: '3px' }}>
             ASTERA
           </div>
-          <p style={{ fontFamily: F.sans, fontSize: '0.6rem', letterSpacing: '0.14em', color: C.white, opacity: 0.26, textTransform: 'uppercase' }}>
+          <p style={{ fontFamily: F.micro, fontSize: '0.6rem', letterSpacing: '0.14em', color: C.white, opacity: 0.26, textTransform: 'uppercase' }}>
             Creative Studio
           </p>
         </div>
@@ -21,7 +21,7 @@ export function Footer() {
           ))}
         </div>
 
-        <p style={{ fontFamily: F.sans, fontSize: '0.6rem', letterSpacing: '0.1em', color: C.white, opacity: 0.2 }}>
+        <p style={{ fontFamily: F.micro, fontSize: '0.6rem', letterSpacing: '0.1em', color: C.white, opacity: 0.2 }}>
           © 2024 ASTERA Studio
         </p>
       </div>

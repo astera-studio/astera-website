@@ -10,7 +10,7 @@ export default function SectionHeading({ children }: SectionHeadingProps) {
   return (
     <h2
       style={{
-        fontFamily: F.display,
+        fontFamily: F.heading,
         fontWeight: 900,
         fontSize: 'clamp(2.2rem, 4vw, 4.8rem)',
         textTransform: 'uppercase',

@@ -46,13 +46,13 @@ export function ProjectCard({ proj }: ProjectCardProps) {
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: 'clamp(1.25rem, 2vw, 2rem)' }}>
           <div style={{ transform: h ? 'translateY(0)' : 'translateY(4px)', transition: 'transform 0.4s ease' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.6rem' }}>
-              <span style={{ fontFamily: F.sans, fontSize: '0.6rem', letterSpacing: '0.18em', color: C.white, opacity: 0.42 }}>{proj.num}</span>
-              <span style={{ fontFamily: F.sans, fontSize: '0.6rem', letterSpacing: '0.15em', color: C.turquoise, opacity: 0.85, textTransform: 'uppercase' }}>{proj.year}</span>
+              <span style={{ fontFamily: F.metadata, fontSize: '0.6rem', letterSpacing: '0.18em', color: C.white, opacity: 0.42 }}>{proj.num}</span>
+              <span style={{ fontFamily: F.metadata, fontSize: '0.6rem', letterSpacing: '0.15em', color: C.turquoise, opacity: 0.85, textTransform: 'uppercase' }}>{proj.year}</span>
             </div>
             <h3 style={{ fontFamily: F.display, fontWeight: 900, fontSize: 'clamp(1.25rem, 2.2vw, 1.85rem)', textTransform: 'uppercase', color: C.white, letterSpacing: '0.04em', lineHeight: 1.05, marginBottom: '0.5rem' }}>
               {proj.title}
             </h3>
-            <p style={{ fontFamily: F.sans, fontSize: '0.63rem', letterSpacing: '0.14em', color: C.white, opacity: 0.46, textTransform: 'uppercase' }}>
+            <p style={{ fontFamily: F.metadata, fontSize: '0.63rem', letterSpacing: '0.14em', color: C.white, opacity: 0.46, textTransform: 'uppercase' }}>
               {proj.category}
             </p>
           </div>

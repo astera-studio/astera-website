@@ -37,7 +37,7 @@ export function AboutSection() {
           — O Estúdio
         </p>
         <h2 style={{
-          fontFamily: F.serif,
+          fontFamily: F.editorial,
           fontWeight: 600,
           fontStyle: 'italic',
           fontSize: 'clamp(1.55rem, 3vw, 3.1rem)',

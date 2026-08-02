@@ -1,5 +1,4 @@
-import SectionLabel from '@/components/ui/SectionLabel'
-import SectionHeading from '@/components/ui/SectionHeading'
+import SectionHeader from '@/components/ui/SectionHeader'
 import { ServiceCard } from '@/components/services/ServiceCard'
 import { C } from '@/theme/colors'
 import { F } from '@/theme/fonts'
@@ -35,19 +34,36 @@ const SERVICES = [
 
 export function ServicesSection() {
   return (
-    <section style={{ backgroundColor: C.surfaceAlternative, padding: `${S.sectionPaddingY} ${S.pageGutter}` }}>
-      <div
-        className="flex flex-col md:flex-row md:items-end justify-between"
-        style={{ borderBottom: `1px solid ${C.lineSubtle}`, paddingBottom: '2rem', marginBottom: '3.5rem', gap: '1.5rem' }}
+    <section
+      style={{
+        backgroundColor: C.surfaceAlternative,
+        padding: `${S.sectionPaddingY} ${S.pageGutter}`,
+      }}
+    >
+      <SectionHeader
+        index="01"
+        label="Serviços"
+        aside={
+          <p
+            className="hidden md:block"
+            style={{
+              fontFamily: F.sans,
+              fontSize: '0.85rem',
+              color: C.white,
+              opacity: 0.36,
+              maxWidth: '250px',
+              lineHeight: 1.72,
+              textAlign: 'right',
+            }}
+          >
+            Serviços completos de design e tecnologia para marcas que querem se destacar.
+          </p>
+        }
       >
-        <div>
-          <SectionLabel index="01" label="Serviços" />
-          <SectionHeading>O que<br />fazemos</SectionHeading>
-        </div>
-        <p className="hidden md:block" style={{ fontFamily: F.sans, fontSize: '0.85rem', color: C.white, opacity: 0.36, maxWidth: '250px', lineHeight: 1.72, textAlign: 'right' }}>
-          Serviços completos de design e tecnologia para marcas que querem se destacar.
-        </p>
-      </div>
+        O que
+        <br />
+        fazemos
+      </SectionHeader>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {SERVICES.map((svc, i) => (

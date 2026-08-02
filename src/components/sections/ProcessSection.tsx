@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import SectionLabel from '@/components/ui/SectionLabel'
-import SectionHeading from '@/components/ui/SectionHeading'
+import SectionHeader from '@/components/ui/SectionHeader'
 import { C } from '@/theme/colors'
 import { F } from '@/theme/fonts'
 import { S } from '@/theme/spacing'
@@ -19,10 +18,9 @@ export function ProcessSection() {
 
   return (
     <section style={{ backgroundColor: C.black, padding: `${S.sectionPaddingY} ${S.pageGutter}` }}>
-      <div style={{ marginBottom: '3.5rem' }}>
-        <SectionLabel index="02" label="Processo" />
-        <SectionHeading>Como<br />trabalhamos</SectionHeading>
-      </div>
+     <SectionHeader index="02" label="Processo">
+      Como<br />trabalhamos
+     </SectionHeader>
 
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-0 lg:gap-16 items-start">
         {/* Steps */}

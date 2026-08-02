@@ -1,5 +1,4 @@
-import SectionLabel from '@/components/ui/SectionLabel'
-import SectionHeading from '@/components/ui/SectionHeading'
+import SectionHeader from '@/components/ui/SectionHeader'
 import { ValueCard } from '@/components/values/ValueCard'
 import { C } from '@/theme/colors'
 import { S } from '@/theme/spacing'
@@ -15,10 +14,9 @@ const VALUES = [
 export function ValuesSection() {
   return (
     <section style={{ backgroundColor: C.black, padding: `${S.sectionPaddingY} ${S.pageGutter}` }}>
-      <div style={{ marginBottom: '3.5rem' }}>
-        <SectionLabel index="04" label="Valores" />
-        <SectionHeading>O que nos<br />guia</SectionHeading>
-      </div>
+    <SectionHeader index="04" label="Valores">
+    O que nos<br />guia
+    </SectionHeader>
 
       <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5"

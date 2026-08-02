@@ -21,7 +21,7 @@ export function ServiceCard({ svc }: ServiceCardProps) {
       onMouseLeave={() => setH(false)}
       style={{
         backgroundColor: h ? 'rgba(70,121,120,0.052)' : 'transparent',
-        border: `1px solid ${h ? 'rgba(70,121,120,0.28)' : 'rgba(244,241,234,0.065)'}`,
+        border: `1px solid ${h ? 'rgba(70,121,120,0.28)' : C.lineSubtle}`,
         padding: 'clamp(1.5rem, 2.5vw, 2.5rem)',
         transition: 'all 0.4s ease',
         cursor: 'default',

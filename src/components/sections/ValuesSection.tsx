@@ -22,10 +22,10 @@ export function ValuesSection() {
 
       <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5"
-        style={{ border: '1px solid rgba(244,241,234,0.065)', borderRight: 'none', borderBottom: 'none' }}
+        style={{ border: `1px solid ${C.lineSubtle}`, borderRight: 'none', borderBottom: 'none' }}
       >
         {VALUES.map((val, i) => (
-          <div key={i} style={{ borderRight: '1px solid rgba(244,241,234,0.065)', borderBottom: '1px solid rgba(244,241,234,0.065)' }}>
+          <div key={i} style={{ borderRight: `1px solid ${C.lineSubtle}`, borderBottom: `1px solid ${C.lineSubtle}` }}>
             <ValueCard val={val} />
           </div>
         ))}

@@ -14,4 +14,6 @@ export const C = {
   textPrimary: brandColors.white,
   accentPrimary: brandColors.orange,
   accentTechnical: brandColors.turquoise,
+  lineSubtle: 'rgba(244,241,234,0.065)',
+  surfaceAlternative: '#0b0b0b',
 }

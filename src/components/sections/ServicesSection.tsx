@@ -35,10 +35,10 @@ const SERVICES = [
 
 export function ServicesSection() {
   return (
-    <section style={{ backgroundColor: '#0b0b0b', padding: `${S.sectionPaddingY} ${S.pageGutter}` }}>
+    <section style={{ backgroundColor: C.surfaceAlternative, padding: `${S.sectionPaddingY} ${S.pageGutter}` }}>
       <div
         className="flex flex-col md:flex-row md:items-end justify-between"
-        style={{ borderBottom: '1px solid rgba(244,241,234,0.065)', paddingBottom: '2rem', marginBottom: '3.5rem', gap: '1.5rem' }}
+        style={{ borderBottom: `1px solid ${C.lineSubtle}`, paddingBottom: '2rem', marginBottom: '3.5rem', gap: '1.5rem' }}
       >
         <div>
           <SectionLabel index="01" label="Serviços" />

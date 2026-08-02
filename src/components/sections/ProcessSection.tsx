@@ -31,7 +31,7 @@ export function ProcessSection() {
             <div
               key={i}
               onClick={() => setActive(i)}
-              style={{ borderTop: '1px solid rgba(244,241,234,0.065)', padding: '1.5rem 0', cursor: 'pointer' }}
+              style={{ borderTop: `1px solid ${C.lineSubtle}`, padding: '1.5rem 0', cursor: 'pointer' }}
             >
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
@@ -56,7 +56,7 @@ export function ProcessSection() {
               )}
             </div>
           ))}
-          <div style={{ borderTop: '1px solid rgba(244,241,234,0.065)' }} />
+          <div style={{ borderTop: `1px solid ${C.lineSubtle}` }} />
         </div>
 
         {/* Visual panel */}

@@ -69,7 +69,7 @@ export function HeroSection() {
       </div>
 
       {/* Ticker */}
-      <div style={{ borderTop: '1px solid rgba(244,241,234,0.065)', overflow: 'hidden', padding: '15px 0' }}>
+      <div style={{ borderTop: `1px solid ${C.lineSubtle}`, overflow: 'hidden', padding: '15px 0' }}>
         <div style={{ display: 'flex', whiteSpace: 'nowrap', animation: 'ticker-scroll 30s linear infinite' }}>
           {[0, 1].map((_, i) => (
             <div key={i} style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>

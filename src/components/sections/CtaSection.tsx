@@ -7,7 +7,7 @@ export function CtaSection() {
   return (
     <section style={{ backgroundColor: '#0c0c0c', padding: `clamp(6rem, 10vw, 10rem) ${S.pageGutter}`, position: 'relative', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 60% 60% at 50% 100%, rgba(70,121,120,0.09) 0%, transparent 70%)', pointerEvents: 'none' }} />
-      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', backgroundColor: 'rgba(244,241,234,0.065)' }} />
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', backgroundColor: C.lineSubtle }} />
 
       <div style={{ position: 'relative', maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
         <p style={{ fontFamily: F.sans, fontSize: '0.62rem', letterSpacing: '0.28em', color: C.turquoise, textTransform: 'uppercase', marginBottom: '2rem', opacity: 0.82 }}>

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { C } from '@/theme/colors'
 import { F } from '@/theme/fonts'
 
@@ -14,7 +14,7 @@ export default function SectionHeading({ children }: SectionHeadingProps) {
         fontWeight: 900,
         fontSize: 'clamp(2.2rem, 4vw, 4.8rem)',
         textTransform: 'uppercase',
-        color: C.white,
+        color: C.textPrimary,
         lineHeight: 0.91,
         letterSpacing: '-0.01em',
       }}

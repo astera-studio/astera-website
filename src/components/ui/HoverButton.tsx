@@ -25,9 +25,9 @@ export default function HoverButton({
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         style={{
-          backgroundColor: hovered ? C.white : C.orange,
-          color: C.black,
-          fontFamily: F.sans,
+          backgroundColor: hovered ? C.textPrimary : C.accentPrimary,
+          color: C.canvas,
+          fontFamily: F.body,
           fontWeight: 600,
           fontSize: fs,
           letterSpacing: '0.16em',
@@ -50,8 +50,8 @@ export default function HoverButton({
       onMouseLeave={() => setHovered(false)}
       style={{
         backgroundColor: 'transparent',
-        color: hovered ? C.white : 'rgba(244,241,234,0.58)',
-        fontFamily: F.sans,
+        color: hovered ? C.textPrimary : 'rgba(244,241,234,0.58)',
+        fontFamily: F.body,
         fontWeight: 400,
         fontSize: fs,
         letterSpacing: '0.16em',
@@ -59,9 +59,9 @@ export default function HoverButton({
         padding: large ? '17px 52px' : '13px 36px',
         border: `1px solid ${
           hovered
-            ? 'rgba(244,241,234,0.42)'
-            : 'rgba(244,241,234,0.18)'
-        }`,
+          ? 'rgba(244,241,234,0.42)'
+          : 'rgba(244,241,234,0.18)'
+          }`,
         cursor: 'pointer',
         transition: `all ${M.uiFeedback}`,
         display: 'inline-block',

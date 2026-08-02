@@ -29,7 +29,7 @@ export function Navigation() {
         className="flex items-center justify-between"
         style={{ height: '72px', padding: `0 ${S.pageGutter}` }}
       >
-        <div style={{ fontFamily: F.display, fontWeight: 900, fontSize: '1.25rem', letterSpacing: '0.14em', color: C.white }}>
+        <div style={{ fontFamily: F.heading, fontWeight: 900, fontSize: '1.25rem', letterSpacing: '0.14em', color: C.textPrimary }}>
           ASTERA
         </div>
 
@@ -44,12 +44,12 @@ export function Navigation() {
           onMouseEnter={() => setCtaHovered(true)}
           onMouseLeave={() => setCtaHovered(false)}
           style={{
-            fontFamily: F.sans,
+            fontFamily: F.body,
             fontSize: '0.68rem',
             letterSpacing: '0.16em',
             textTransform: 'uppercase',
-            color: ctaHovered ? C.black : C.orange,
-            backgroundColor: ctaHovered ? C.orange : 'transparent',
+            color: ctaHovered ? C.canvas : C.accentPrimary,
+            backgroundColor: ctaHovered ? C.accentPrimary : 'transparent',
             border: `1px solid rgba(232,106,51,0.4)`,
             padding: '10px 22px',
             cursor: 'pointer',

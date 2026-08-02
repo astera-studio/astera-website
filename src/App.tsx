@@ -12,7 +12,7 @@ import { F } from '@/theme/fonts'
 
 export default function App() {
   return (
-    <div style={{ fontFamily: F.sans, backgroundColor: C.black, color: C.white, overflowX: 'hidden' }}>
+    <div style={{ fontFamily: F.sans, backgroundColor: C.canvas, color: C.textPrimary, overflowX: 'hidden' }}>
       <Navigation />
       <HeroSection />
       <AboutSection />

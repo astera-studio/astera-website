@@ -4,6 +4,7 @@ import SectionHeading from '@/components/ui/SectionHeading'
 import { ProjectCard } from '@/components/portfolio/ProjectCard'
 import { C } from '@/theme/colors'
 import { F } from '@/theme/fonts'
+import { S } from '@/theme/spacing'
 
 const PROJECTS = [
   { id: 1, num: '01', title: 'Nordvik Architecture', category: 'Brand Identity · Web Design', year: '2024', image: 'https://images.unsplash.com/photo-1593466486574-71b38f2ff423?w=1200&h=800&fit=crop&auto=format' },
@@ -16,7 +17,7 @@ export function PortfolioSection() {
   const [linkH, setLinkH] = useState(false)
 
   return (
-    <section style={{ backgroundColor: '#0b0b0b', padding: 'clamp(5rem, 8vw, 9rem) clamp(1.5rem, 4vw, 6rem)' }}>
+    <section style={{ backgroundColor: '#0b0b0b', padding: `${S.sectionPaddingY} ${S.pageGutter}` }}>
       <div
         className="flex flex-col md:flex-row md:items-end justify-between"
         style={{ borderBottom: '1px solid rgba(244,241,234,0.065)', paddingBottom: '2rem', marginBottom: '3.5rem', gap: '1.5rem' }}

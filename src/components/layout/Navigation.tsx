@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { C } from '@/theme/colors'
 import { F } from '@/theme/fonts'
+import { S } from '@/theme/spacing'
 import { NavLink } from './NavLink'
 
 export function Navigation() {
@@ -26,7 +27,7 @@ export function Navigation() {
     >
       <div
         className="flex items-center justify-between"
-        style={{ height: '72px', padding: '0 clamp(1.5rem, 4vw, 6rem)' }}
+        style={{ height: '72px', padding: `0 ${S.pageGutter}` }}
       >
         <div style={{ fontFamily: F.display, fontWeight: 900, fontSize: '1.25rem', letterSpacing: '0.14em', color: C.white }}>
           ASTERA

@@ -3,6 +3,7 @@ import SectionLabel from '@/components/ui/SectionLabel'
 import SectionHeading from '@/components/ui/SectionHeading'
 import { C } from '@/theme/colors'
 import { F } from '@/theme/fonts'
+import { S } from '@/theme/spacing'
 
 const PROCESS = [
   { num: '01', title: 'Discovery',    subtitle: 'Imersão',        body: 'Mergulhamos na sua marca, mercado e audiência para entender o que precisa ser comunicado e como chegar lá com precisão.' },
@@ -17,7 +18,7 @@ export function ProcessSection() {
   const step = PROCESS[active]
 
   return (
-    <section style={{ backgroundColor: C.black, padding: 'clamp(5rem, 8vw, 9rem) clamp(1.5rem, 4vw, 6rem)' }}>
+    <section style={{ backgroundColor: C.black, padding: `${S.sectionPaddingY} ${S.pageGutter}` }}>
       <div style={{ marginBottom: '3.5rem' }}>
         <SectionLabel index="02" label="Processo" />
         <SectionHeading>Como<br />trabalhamos</SectionHeading>

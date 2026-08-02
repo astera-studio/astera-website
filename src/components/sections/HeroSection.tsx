@@ -2,6 +2,7 @@ import HoverButton from '@/components/ui/HoverButton'
 import OrbitalDiagram from '@/components/graphics/OrbitalDiagram'
 import { C } from '@/theme/colors'
 import { F } from '@/theme/fonts'
+import { S } from '@/theme/spacing'
 
 const TICKER = ['Brand Identity', 'Web Design', 'Digital Experience', 'E-commerce', 'Creative Direction', 'UI/UX Design', 'Visual Identity', 'Motion Design']
 
@@ -15,7 +16,7 @@ export function HeroSection() {
       }} />
 
       {/* Main content */}
-      <div style={{ flex: 1, display: 'flex', alignItems: 'center', padding: 'clamp(5.5rem, 9vw, 8rem) clamp(1.5rem, 4vw, 6rem) clamp(2.5rem, 4vw, 4rem)' }}>
+      <div style={{ flex: 1, display: 'flex', alignItems: 'center', padding: `clamp(5.5rem, 9vw, 8rem) ${S.pageGutter} clamp(2.5rem, 4vw, 4rem)` }}>
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Left: copy */}

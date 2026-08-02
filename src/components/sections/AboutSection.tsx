@@ -1,5 +1,6 @@
 import { C } from '@/theme/colors'
 import { F } from '@/theme/fonts'
+import { S } from '@/theme/spacing'
 
 export function AboutSection() {
   const stats = [
@@ -9,7 +10,7 @@ export function AboutSection() {
   ]
 
   return (
-    <section style={{ backgroundColor: C.black, padding: 'clamp(5rem, 8vw, 9rem) clamp(1.5rem, 4vw, 6rem)' }}>
+    <section style={{ backgroundColor: C.black, padding: `${S.sectionPaddingY} ${S.pageGutter}` }}>
       {/* Stats */}
       <div
         className="grid grid-cols-3"

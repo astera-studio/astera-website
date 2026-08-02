@@ -1,10 +1,11 @@
 import { C } from '@/theme/colors'
 import { F } from '@/theme/fonts'
+import { S } from '@/theme/spacing'
 import { FooterLink } from './FooterLink'
 
 export function Footer() {
   return (
-    <footer style={{ backgroundColor: C.black, borderTop: '1px solid rgba(244,241,234,0.065)', padding: '2.5rem clamp(1.5rem, 4vw, 6rem)' }}>
+    <footer style={{ backgroundColor: C.black, borderTop: '1px solid rgba(244,241,234,0.065)', padding: `2.5rem ${S.pageGutter}` }}>
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div>
           <div style={{ fontFamily: F.display, fontWeight: 900, fontSize: '1.2rem', letterSpacing: '0.14em', color: C.white, marginBottom: '3px' }}>

@@ -2,6 +2,7 @@ import SectionLabel from '@/components/ui/SectionLabel'
 import SectionHeading from '@/components/ui/SectionHeading'
 import { ValueCard } from '@/components/values/ValueCard'
 import { C } from '@/theme/colors'
+import { S } from '@/theme/spacing'
 
 const VALUES = [
   { num: '01', sym: '◈', title: 'Estratégia',    body: 'Cada decisão criativa é fundamentada em análise profunda. Design sem estratégia é apenas decoração.' },
@@ -13,7 +14,7 @@ const VALUES = [
 
 export function ValuesSection() {
   return (
-    <section style={{ backgroundColor: C.black, padding: 'clamp(5rem, 8vw, 9rem) clamp(1.5rem, 4vw, 6rem)' }}>
+    <section style={{ backgroundColor: C.black, padding: `${S.sectionPaddingY} ${S.pageGutter}` }}>
       <div style={{ marginBottom: '3.5rem' }}>
         <SectionLabel index="04" label="Valores" />
         <SectionHeading>O que nos<br />guia</SectionHeading>

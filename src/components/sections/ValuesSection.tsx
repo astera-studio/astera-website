@@ -1,0 +1,34 @@
+import SectionLabel from '@/components/ui/SectionLabel'
+import SectionHeading from '@/components/ui/SectionHeading'
+import { ValueCard } from '@/components/values/ValueCard'
+import { C } from '@/theme/colors'
+
+const VALUES = [
+  { num: '01', sym: '◈', title: 'Estratégia',    body: 'Cada decisão criativa é fundamentada em análise profunda. Design sem estratégia é apenas decoração.' },
+  { num: '02', sym: '◇', title: 'Excelência',    body: 'Não entregamos o suficiente. Entregamos o excepcional. Cada pixel, cada linha de código importa.' },
+  { num: '03', sym: '○', title: 'Transparência', body: 'Comunicação clara, prazos honestos e processos abertos. Confiança é a base de tudo o que construímos.' },
+  { num: '04', sym: '△', title: 'Criatividade',  body: 'Pensamento original que foge dos clichês. Soluções únicas que fazem sua marca ser verdadeiramente lembrada.' },
+  { num: '05', sym: '⬡', title: 'Evolução',      body: 'O mundo digital muda constantemente. Estamos sempre à frente, antecipando e adaptando o que construímos.' },
+]
+
+export function ValuesSection() {
+  return (
+    <section style={{ backgroundColor: C.black, padding: 'clamp(5rem, 8vw, 9rem) clamp(1.5rem, 4vw, 6rem)' }}>
+      <div style={{ marginBottom: '3.5rem' }}>
+        <SectionLabel index="04" label="Valores" />
+        <SectionHeading>O que nos<br />guia</SectionHeading>
+      </div>
+
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5"
+        style={{ border: '1px solid rgba(244,241,234,0.065)', borderRight: 'none', borderBottom: 'none' }}
+      >
+        {VALUES.map((val, i) => (
+          <div key={i} style={{ borderRight: '1px solid rgba(244,241,234,0.065)', borderBottom: '1px solid rgba(244,241,234,0.065)' }}>
+            <ValueCard val={val} />
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}

@@ -1,10 +1,11 @@
 import SectionHeader from '@/components/ui/SectionHeader'
 import { ServiceCard } from '@/components/services/ServiceCard'
+import type { Service } from '@/types/service'
 import { C } from '@/theme/colors'
 import { F } from '@/theme/fonts'
 import { S } from '@/theme/spacing'
 
-const SERVICES = [
+const SERVICES: Service[] = [
   {
     num: '01', title: 'Brand Identity', subtitle: 'Identidade Visual',
     description: 'Criamos identidades visuais que comunicam a essência da sua marca com precisão e elegância. Do naming ao sistema completo de design.',

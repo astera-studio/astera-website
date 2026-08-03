@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import SectionHeader from '@/components/ui/SectionHeader'
+import type { ProcessStep } from '@/types/process'
 import { C } from '@/theme/colors'
 import { F } from '@/theme/fonts'
 import { S } from '@/theme/spacing'
 
-const PROCESS = [
+const PROCESS: ProcessStep[] = [
   { num: '01', title: 'Discovery',    subtitle: 'Imersão',        body: 'Mergulhamos na sua marca, mercado e audiência para entender o que precisa ser comunicado e como chegar lá com precisão.' },
   { num: '02', title: 'Strategy',     subtitle: 'Estratégia',     body: 'Desenvolvemos um plano claro: posicionamento, mensagem-chave, canais e métricas de sucesso para guiar toda a criação.' },
   { num: '03', title: 'Design',       subtitle: 'Criação',        body: 'A visão ganha forma. Conceitos visuais, protótipos iterativos e refinamento até que cada detalhe esteja perfeito.' },

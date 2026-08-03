@@ -1,15 +1,10 @@
 import { useState } from 'react'
+import type { Service } from '@/types/service'
 import { C } from '@/theme/colors'
 import { F } from '@/theme/fonts'
 
 type ServiceCardProps = {
-  svc: {
-    num: string
-    title: string
-    subtitle: string
-    description: string
-    tags: string[]
-  }
+  svc: Service
 }
 
 export function ServiceCard({ svc }: ServiceCardProps) {

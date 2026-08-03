@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import SectionHeader from '@/components/ui/SectionHeader'
 import { ProjectCard } from '@/components/portfolio/ProjectCard'
+import type { Project } from '@/types/project'
 import { C } from '@/theme/colors'
 import { F } from '@/theme/fonts'
 import { S } from '@/theme/spacing'
 
-const PROJECTS = [
+const PROJECTS: Project[] = [
   {
     id: 1,
     num: '01',

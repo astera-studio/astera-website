@@ -1,9 +1,10 @@
 import SectionHeader from '@/components/ui/SectionHeader'
 import { ValueCard } from '@/components/values/ValueCard'
+import type { Value } from '@/types/value'
 import { C } from '@/theme/colors'
 import { S } from '@/theme/spacing'
 
-const VALUES = [
+const VALUES: Value[] = [
   { num: '01', sym: '◈', title: 'Estratégia',    body: 'Cada decisão criativa é fundamentada em análise profunda. Design sem estratégia é apenas decoração.' },
   { num: '02', sym: '◇', title: 'Excelência',    body: 'Não entregamos o suficiente. Entregamos o excepcional. Cada pixel, cada linha de código importa.' },
   { num: '03', sym: '○', title: 'Transparência', body: 'Comunicação clara, prazos honestos e processos abertos. Confiança é a base de tudo o que construímos.' },

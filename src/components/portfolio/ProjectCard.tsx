@@ -1,17 +1,11 @@
 import { useState } from 'react'
+import type { Project } from '@/types/project'
 import { C } from '@/theme/colors'
 import { F } from '@/theme/fonts'
 import { M } from '@/theme/motion'
 
 type ProjectCardProps = {
-  proj: {
-    id: number
-    num: string
-    title: string
-    category: string
-    year: string
-    image: string
-  }
+  proj: Project
 }
 
 export function ProjectCard({ proj }: ProjectCardProps) {

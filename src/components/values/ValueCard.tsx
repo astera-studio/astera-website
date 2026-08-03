@@ -1,15 +1,11 @@
 import { useState } from 'react'
+import type { Value } from '@/types/value'
 import { C } from '@/theme/colors'
 import { F } from '@/theme/fonts'
 import { M } from '@/theme/motion'
 
 type ValueCardProps = {
-  val: {
-    num: string
-    sym: string
-    title: string
-    body: string
-  }
+  val: Value
 }
 
 export function ValueCard({ val }: ValueCardProps) {

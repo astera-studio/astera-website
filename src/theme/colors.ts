@@ -10,10 +10,10 @@ const brandColors = {
 
 export const C = {
   ...brandColors,
-  canvas: brandColors.black,
-  textPrimary: brandColors.white,
-  accentPrimary: brandColors.orange,
-  accentTechnical: brandColors.turquoise,
-  lineSubtle: 'rgba(244,241,234,0.065)',
-  surfaceAlternative: '#0b0b0b',
-}
+  canvas: 'var(--color-canvas)',
+  textPrimary: 'var(--color-text-primary)',
+  accentPrimary: 'var(--color-accent-primary)',
+  accentTechnical: 'var(--color-accent-technical)',
+  lineSubtle: 'var(--color-line-subtle)',
+  surfaceAlternative: 'var(--color-surface-alternative)',
+} as const

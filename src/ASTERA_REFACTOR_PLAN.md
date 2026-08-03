@@ -2,261 +2,324 @@
 
 ## 1. Contexto do Projeto
 
-Projeto desenvolvido inicialmente através do Figma Make e exportado para GitHub.
+Projeto desenvolvido inicialmente através do Figma Make e exportado para o GitHub.
 
-Stack atual:
+### Stack atual
 
 - React 19
 - TypeScript
-- Vite
+- Vite 8
 - Tailwind CSS 4
 - npm
 - Git
 
-Objetivo:
+### Objetivo
 
-Transformar o export inicial do Figma Make em uma base profissional, organizada e escalável para o site institucional da Astera Studio.
+Transformar o export inicial do Figma Make em uma base profissional, organizada, escalável e preparada para sustentar o site institucional e o Design System da Astera Studio.
 
 ---
 
 # 2. Estado Atual
 
-## Estrutura atual
-src/
-├── App.tsx
-├── index.css
-├── main.tsx
-└── vite-env.d.ts
+## Estrutura
 
+- Componentes organizados por domínio.
+- Layout separado das seções.
+- Componentes de interface reutilizáveis.
+- Tokens centralizados em `theme`.
+- Tipos compartilhados em `types`.
+- Barrel exports para `theme`, `types` e `components/ui`.
+- `App.tsx` atua apenas como composição da aplicação.
 
 ## Observações
 
-- O projeto funciona localmente.
-- O ambiente foi validado após reinstalação das dependências.
-- O servidor Vite está configurado inicialmente para a porta 8443 devido ao ambiente Figma Make/Codespaces.
-- O projeto utiliza TypeScript.
-- O projeto utiliza Tailwind CSS.
-- A refatoração incremental já foi iniciada.
-- Os primeiros componentes reutilizáveis foram extraídos do App.tsx.
-- Os tokens de cores e tipografia foram centralizados na pasta theme.
----
-
-# 3. Pontos positivos encontrados
-
-## Arquitetura
-
-Apesar de estar concentrado em um único arquivo, o App.tsx já possui componentes separados:
-
-- Navigation
-- Hero Section
-- About Section
-- Services Section
-- Process Section
-- Portfolio Section
-- Values Section
-- CTA Section
-- Footer
-
-Isso permite uma refatoração incremental sem reconstrução completa.
+- Projeto validado com TypeScript.
+- Build funcionando normalmente.
+- Vite configurado na porta 8443.
+- Refatoração incremental concluída nas Fases 1 e 2.
 
 ---
 
-## Design
-
-A direção visual já está alinhada parcialmente com a proposta da Astera:
-
-- estética futurista/editorial;
-- fundo escuro;
-- elementos técnicos;
-- glow;
-- paleta próxima da identidade definida;
-- componente orbital em SVG;
-- animações CSS.
-
----
-
-# 4. Problemas encontrados
+# 3. Arquitetura Atual
 
 ## Organização
 
-Problema principal:
+A aplicação encontra-se dividida em:
 
-O arquivo:
+- Layout
+- Seções
+- UI
+- Componentes de domínio
+- Graphics
+- Theme
+- Types
 
-src/App.tsx
+Cada responsabilidade possui seu próprio diretório.
 
+## App.tsx
 
-contém praticamente toda a aplicação.
+O `App.tsx` contém apenas:
 
-Consequências:
+- Shell da aplicação
+- Navigation
+- Hero
+- About
+- Services
+- Process
+- Portfolio
+- Values
+- CTA
+- Footer
 
-- difícil manutenção;
-- difícil evolução;
-- componentes pouco reutilizáveis;
-- baixa escalabilidade.
+Não existem mais:
 
----
-
-## Estilos
-
-Atualmente:
-
-- muitos estilos inline dentro dos componentes;
-- tokens de design definidos dentro do App.tsx;
-- pouca separação entre estrutura e aparência.
-
----
-
-## Figma Make
-
-Foram identificados arquivos e configurações específicas do Figma:
-
-- .figma/
-- plugins do Figma no vite.config.ts
-- configurações automáticas de preview.
-
-Esses itens serão avaliados antes de remoção.
+- dados internos;
+- arrays locais;
+- estados das seções;
+- componentes declarados dentro do App.
 
 ---
 
-# 5. Objetivos da Refatoração
+# 4. Princípios da Refatoração
 
-src/
-
-├── assets/
-
-├── components/
-│
-├── graphics/
-│   └── OrbitalDiagram.tsx
-│
-├── layout/
-│   ├── Footer.tsx
-│   ├── Header.tsx
-│   └── Navigation.tsx
-│
-├── portfolio/
-│
-├── sections/
-│   ├── About.tsx
-│   ├── Contact.tsx
-│   ├── Hero.tsx
-│   ├── Portfolio.tsx
-│   ├── Process.tsx
-│   ├── Services.tsx
-│   └── Values.tsx
-│
-├── services/
-│
-├── ui/
-│   ├── HoverButton.tsx
-│   ├── NavLink.tsx
-│   ├── SectionHeading.tsx
-│   └── SectionLabel.tsx
-│
-├── values/
-│
-├── theme/
-│   ├── colors.ts
-│   └── fonts.ts
-│
-├── App.tsx
-├── index.css
-└── main.tsx
-
+- Não reescrever o projeto.
+- Refatorar incrementalmente.
+- Validar cada alteração.
+- Preservar o visual existente.
+- Criar abstrações apenas quando comprovadamente reutilizáveis.
+- Manter elementos expressivos próximos aos componentes.
+- Evitar overengineering.
+- Priorizar legibilidade e manutenção.
 
 ---
 
-# 6. Estratégia de Refatoração
+# 5. Fase 1 — Organização Arquitetural
 
-## Fase 1 — Organização
+## Status
 
-Objetivo:
+✅ Concluída
 
-Separar responsabilidades sem alterar o visual.
+## Objetivo
 
-Ações:
+Separar responsabilidades sem alterar o comportamento visual da aplicação.
 
-- criar estrutura de pastas;
-- extrair componentes pequenos;
-- manter funcionamento após cada mudança.
+## Entregas
+
+- estrutura modular criada;
+- componentes de layout extraídos;
+- componentes UI extraídos;
+- Hero extraído;
+- About extraído;
+- Services extraído;
+- Process extraído;
+- Portfolio extraído;
+- Values extraído;
+- CTA extraído;
+- Footer reorganizado;
+- App reduzido à composição da aplicação.
+
+Todos os passos foram validados individualmente.
 
 ---
 
-Status atual:
+# 6. Fase 2 — Fundação do Design System
 
-✔ Estrutura principal de pastas criada.
+## Status
 
-✔ Componentes reutilizáveis extraídos:
+✅ Concluída
 
-- SectionLabel
-- SectionHeading
-- HoverButton
-- NavLink
-- OrbitalDiagram
+## Objetivo
 
-✔ Tokens de design movidos para:
+Criar uma fundação sólida para o Design System sem alterar significativamente a identidade visual.
 
-- theme/colors.ts
-- theme/fonts.ts
+## Entregas
 
-Próximo passo:
+### Tokens semânticos
 
-Extrair as seções completas do App.tsx (Hero, About, Services, Process, Portfolio, Values, Contact).
+Foram criados tokens para:
 
-## Fase 2 — Design System
-
-Objetivo:
-
-Centralizar identidade visual.
-
-Criar:
-
-- variáveis de cores;
+- cores;
 - tipografia;
-- espaçamentos;
-- padrões de componentes.
+- espaçamento;
+- motion.
+
+### Componentes compartilhados
+
+- SectionHeader
+
+### Tipos compartilhados
+
+- Service
+- Project
+- Value
+- ProcessStep
+
+### Theme
+
+Centralização de:
+
+- colors
+- fonts
+- spacing
+- motion
+
+### Barrel exports
+
+Foram adicionados barrels focados para:
+
+- theme
+- types
+- components/ui
+
+### Tailwind CSS 4
+
+Integração inicial através de:
+
+- @theme
+- CSS custom properties
+
+### Princípios preservados
+
+- nenhuma alteração visual significativa;
+- nenhuma troca de tipografia oficial;
+- nenhuma migração em massa para Tailwind;
+- nenhuma abstração desnecessária;
+- elementos editoriais permanecem locais.
 
 ---
 
-## Fase 3 — Refinamento Astera
+# 7. Estado Atual do Design System
 
-Alterações:
+## Cores
 
-- substituir fontes provisórias;
-- ajustar textos;
-- inserir assets próprios;
-- melhorar animações;
-- adicionar elementos visuais da marca.
+Possui papéis semânticos para:
+
+- canvas
+- textPrimary
+- accentPrimary
+- accentTechnical
+- lineSubtle
+- surfaceAlternative
+
+## Tipografia
+
+Papéis semânticos:
+
+- heading
+- editorial
+- body
+- eyebrow
+- metadata
+- micro
+
+## Espaçamento
+
+Tokens compartilhados:
+
+- pageGutter
+- sectionPaddingY
+
+## Motion
+
+Token compartilhado:
+
+- uiFeedback
 
 ---
 
-## Fase 4 — Preparação para produção
+# 8. Refinamentos Pendentes
 
-Checklist:
+Ainda permanecem pendentes:
 
-- remover dependências do Figma Make quando seguro;
+- tipografia oficial da marca;
+- aplicação das cores complementares;
+- assets proprietários;
+- refinamento editorial;
+- microinterações;
+- acessibilidade;
+- revisão fina da responsividade;
+- otimizações para produção.
+
+---
+
+# 9. Diretriz sobre Radius e Sombras
+
+O site institucional da Astera privilegia:
+
+- superfícies retas;
+- linhas técnicas;
+- contraste elevado;
+- ausência de sombras convencionais.
+
+Pequenos raios de borda (4–8px) e sombras discretas poderão ser utilizados futuramente em dashboards, sistemas internos e aplicações SaaS quando contribuírem para a usabilidade, mantendo coerência com a identidade visual da marca.
+
+---
+
+# 10. Fase 3 — Refinamento Visual
+
+## Status
+
+⏳ Próxima fase
+
+## Objetivos
+
+- substituir a fonte display provisória pela tipografia oficial;
+- revisar a hierarquia tipográfica;
+- aplicar pontualmente a paleta complementar;
+- substituir imagens temporárias;
+- incorporar assets proprietários;
+- refinar grids e espaçamentos;
+- aprimorar motion;
+- revisar acessibilidade;
+- ajustar responsividade fina.
+
+---
+
+# 11. Fase 4 — Preparação para Produção
+
+## Status
+
+⏳ Pendente
+
+## Checklist
+
+- revisar configurações do Vite;
+- avaliar remoção das dependências do Figma Make;
 - revisar SEO;
+- configurar Open Graph;
+- inserir favicon definitivo;
 - otimizar imagens;
-- configurar deploy.
+- revisar bundle;
+- executar Lighthouse;
+- configurar deploy definitivo;
+- revisar analytics.
 
 ---
 
-# 7. Regras da Refatoração
+# 12. Validação
 
-- Não reescrever tudo do zero.
-- Não alterar visual sem necessidade.
-- Fazer pequenas mudanças testáveis.
-- Manter a aplicação funcionando em cada etapa.
-- Priorizar organização antes de estética.
+As Fases 1 e 2 foram validadas com:
+
+- `npx tsc --noEmit`
+- `npm run build`
+- `npm run dev`
+- validação visual em desktop;
+- validação visual em mobile;
+- verificação de overflow horizontal;
+- validação dos componentes interativos;
+- `git diff --check`;
+- `git status`.
+
+Os avisos existentes no Vite permanecem documentados e não impedem o funcionamento da aplicação.
 
 ---
 
-# 8. Próximos passos
+# 13. Próximos Passos
 
-1. Extrair as seções do App.tsx uma por uma.
-2. Reduzir progressivamente o tamanho do App.tsx.
-3. Validar funcionamento após cada extração.
-4. Revisar componentes para eliminar duplicações.
-5. Avaliar remoção definitiva das dependências do Figma Make.
-6. Preparar o Design System completo.
+1. Publicar a branch `refactor/astera-v1`.
+2. Planejar detalhadamente a Fase 3.
+3. Integrar a tipografia oficial da Astera.
+4. Aplicar a paleta complementar de forma criteriosa.
+5. Inserir os assets definitivos da marca.
+6. Refinar a identidade visual editorial.
+7. Preparar a aplicação para produção.

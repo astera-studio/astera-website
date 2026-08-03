@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
-import SectionLabel from '@/components/ui/SectionLabel'
-import SectionHeading from '@/components/ui/SectionHeading'
-import { C } from '@/theme/colors'
+import SectionLabel from './SectionLabel'
+import SectionHeading from './SectionHeading'
+import { C } from '@/theme'
 
 type SectionHeaderProps = {
   index: string

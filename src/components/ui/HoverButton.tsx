@@ -1,7 +1,5 @@
 import { useState } from 'react'
-import { C } from '@/theme/colors'
-import { F } from '@/theme/fonts'
-import { M } from '@/theme/motion'
+import { C, F, M } from '@/theme'
 
 type HoverButtonProps = {
   variant: 'primary' | 'ghost'

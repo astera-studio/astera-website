@@ -1,8 +1,6 @@
 import { useState } from 'react'
-import type { Value } from '@/types/value'
-import { C } from '@/theme/colors'
-import { F } from '@/theme/fonts'
-import { M } from '@/theme/motion'
+import type { Value } from '@/types'
+import { C, F, M } from '@/theme'
 
 type ValueCardProps = {
   val: Value

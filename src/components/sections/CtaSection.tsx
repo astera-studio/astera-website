@@ -1,7 +1,5 @@
-import HoverButton from '@/components/ui/HoverButton'
-import { C } from '@/theme/colors'
-import { F } from '@/theme/fonts'
-import { S } from '@/theme/spacing'
+import { HoverButton } from '@/components/ui'
+import { C, F, S } from '@/theme'
 
 export function CtaSection() {
   return (

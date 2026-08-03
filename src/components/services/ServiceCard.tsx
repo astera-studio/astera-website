@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import type { Service } from '@/types/service'
-import { C } from '@/theme/colors'
-import { F } from '@/theme/fonts'
+import type { Service } from '@/types'
+import { C, F } from '@/theme'
 
 type ServiceCardProps = {
   svc: Service

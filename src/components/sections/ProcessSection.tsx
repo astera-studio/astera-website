@@ -1,9 +1,7 @@
 import { useState } from 'react'
-import SectionHeader from '@/components/ui/SectionHeader'
-import type { ProcessStep } from '@/types/process'
-import { C } from '@/theme/colors'
-import { F } from '@/theme/fonts'
-import { S } from '@/theme/spacing'
+import { SectionHeader } from '@/components/ui'
+import type { ProcessStep } from '@/types'
+import { C, F, S } from '@/theme'
 
 const PROCESS: ProcessStep[] = [
   { num: '01', title: 'Discovery',    subtitle: 'Imersão',        body: 'Mergulhamos na sua marca, mercado e audiência para entender o que precisa ser comunicado e como chegar lá com precisão.' },

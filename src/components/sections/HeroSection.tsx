@@ -1,8 +1,6 @@
-import HoverButton from '@/components/ui/HoverButton'
+import { HoverButton } from '@/components/ui'
 import OrbitalDiagram from '@/components/graphics/OrbitalDiagram'
-import { C } from '@/theme/colors'
-import { F } from '@/theme/fonts'
-import { S } from '@/theme/spacing'
+import { C, F, S } from '@/theme'
 
 const TICKER = ['Brand Identity', 'Web Design', 'Digital Experience', 'E-commerce', 'Creative Direction', 'UI/UX Design', 'Visual Identity', 'Motion Design']
 

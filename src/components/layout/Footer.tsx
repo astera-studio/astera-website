@@ -1,6 +1,4 @@
-import { C } from '@/theme/colors'
-import { F } from '@/theme/fonts'
-import { S } from '@/theme/spacing'
+import { C, F, S } from '@/theme'
 import { FooterLink } from './FooterLink'
 
 export function Footer() {

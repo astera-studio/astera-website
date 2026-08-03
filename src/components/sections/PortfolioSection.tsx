@@ -1,10 +1,8 @@
 import { useState } from 'react'
-import SectionHeader from '@/components/ui/SectionHeader'
+import { SectionHeader } from '@/components/ui'
 import { ProjectCard } from '@/components/portfolio/ProjectCard'
-import type { Project } from '@/types/project'
-import { C } from '@/theme/colors'
-import { F } from '@/theme/fonts'
-import { S } from '@/theme/spacing'
+import type { Project } from '@/types'
+import { C, F, S } from '@/theme'
 
 const PROJECTS: Project[] = [
   {

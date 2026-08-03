@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import { C } from '@/theme/colors'
-import { F } from '@/theme/fonts'
+import { C, F } from '@/theme'
 
 type FooterLinkProps = {
   label: string

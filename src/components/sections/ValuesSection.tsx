@@ -1,8 +1,7 @@
-import SectionHeader from '@/components/ui/SectionHeader'
+import { SectionHeader } from '@/components/ui'
 import { ValueCard } from '@/components/values/ValueCard'
-import type { Value } from '@/types/value'
-import { C } from '@/theme/colors'
-import { S } from '@/theme/spacing'
+import type { Value } from '@/types'
+import { C, S } from '@/theme'
 
 const VALUES: Value[] = [
   { num: '01', sym: '◈', title: 'Estratégia',    body: 'Cada decisão criativa é fundamentada em análise profunda. Design sem estratégia é apenas decoração.' },

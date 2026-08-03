@@ -1,5 +1,4 @@
-import { C } from '@/theme/colors'
-import { F } from '@/theme/fonts'
+import { C, F } from '@/theme'
 
 function SectionLabel({ index, label }: { index: string; label: string }) {
   return (

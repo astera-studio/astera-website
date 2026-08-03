@@ -1,9 +1,7 @@
-import SectionHeader from '@/components/ui/SectionHeader'
+import { SectionHeader } from '@/components/ui'
 import { ServiceCard } from '@/components/services/ServiceCard'
-import type { Service } from '@/types/service'
-import { C } from '@/theme/colors'
-import { F } from '@/theme/fonts'
-import { S } from '@/theme/spacing'
+import type { Service } from '@/types'
+import { C, F, S } from '@/theme'
 
 const SERVICES: Service[] = [
   {

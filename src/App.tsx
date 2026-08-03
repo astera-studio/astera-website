@@ -7,8 +7,7 @@ import { ValuesSection } from '@/components/sections/ValuesSection'
 import { ProcessSection } from '@/components/sections/ProcessSection'
 import { CtaSection } from '@/components/sections/CtaSection'
 import { HeroSection } from '@/components/sections/HeroSection'
-import { C } from '@/theme/colors'
-import { F } from '@/theme/fonts'
+import { C, F } from '@/theme'
 
 export default function App() {
   return (

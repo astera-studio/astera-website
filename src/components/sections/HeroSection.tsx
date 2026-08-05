@@ -2,77 +2,243 @@ import { HoverButton } from '@/components/ui'
 import OrbitalDiagram from '@/components/graphics/OrbitalDiagram'
 import { C, F, S } from '@/theme'
 
-const TICKER = ['Brand Identity', 'Web Design', 'Digital Experience', 'E-commerce', 'Creative Direction', 'UI/UX Design', 'Visual Identity', 'Motion Design']
+const TICKER = [
+  'Brand Identity',
+  'Web Design',
+  'Digital Experience',
+  'E-commerce',
+  'Creative Direction',
+  'UI/UX Design',
+  'Visual Identity',
+  'Motion Design',
+]
 
 export function HeroSection() {
   return (
-    <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: C.black }}>
+    <section
+      style={{
+        position: 'relative',
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        backgroundColor: C.black,
+      }}
+    >
       {/* Background radial glow */}
-      <div style={{
-        position: 'absolute', inset: 0, pointerEvents: 'none',
-        background: 'radial-gradient(ellipse 55% 65% at 72% 48%, rgba(70,121,120,0.075) 0%, transparent 68%)',
-      }} />
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          pointerEvents: 'none',
+          background:
+            'radial-gradient(ellipse 55% 65% at 72% 48%, rgba(70,121,120,0.075) 0%, transparent 68%)',
+        }}
+      />
 
       {/* Main content */}
-      <div style={{ flex: 1, display: 'flex', alignItems: 'center', padding: `clamp(5.5rem, 9vw, 8rem) ${S.pageGutter} clamp(2.5rem, 4vw, 4rem)` }}>
+      <div
+        style={{
+          flex: 1,
+          display: 'flex',
+          alignItems: 'flex-start',
+          padding: `clamp(7rem, 10vh, 8.5rem) ${S.pageGutter} clamp(2rem, 3vw, 3rem)`,
+        }}
+      >
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
           {/* Left: copy */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '2rem' }}>
-              <span style={{ display: 'block', width: '28px', height: '1px', backgroundColor: C.turquoise, flexShrink: 0 }} />
-              <span style={{ fontFamily: F.sans, fontSize: '0.62rem', letterSpacing: '0.28em', color: C.turquoise, textTransform: 'uppercase' }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                marginBottom: '2rem',
+              }}
+            >
+              <span
+                style={{
+                  display: 'block',
+                  width: '28px',
+                  height: '1px',
+                  backgroundColor: C.turquoise,
+                  flexShrink: 0,
+                }}
+              />
+
+              <span
+                style={{
+                  fontFamily: F.sans,
+                  fontSize: '0.64rem',
+                  fontWeight: 500,
+                  letterSpacing: '0.28em',
+                  color: C.turquoise,
+                  textTransform: 'uppercase',
+                }}
+              >
                 Art · Design · Technology
               </span>
             </div>
 
-            <h1 style={{
-              fontFamily: F.display,
-              fontWeight: 900,
-              fontSize: 'clamp(3rem, 5.5vw, 7.2rem)',
-              lineHeight: 0.92,
-              color: C.white,
-              letterSpacing: '-0.01em',
-              textTransform: 'uppercase',
-              marginBottom: '2rem',
-            }}>
-              Projetamos<br />
-              <span style={{ opacity: 0.88 }}>o futuro</span><br />
-              <span style={{ WebkitTextStroke: '1.5px #F4F1EA', color: 'transparent' }}>digital</span><br />
-              das marcas.
+            <h1
+              style={{
+                fontFamily: F.heading,
+                fontWeight: 600,
+                fontSize: 'clamp(2.6rem, 3.9vw, 4.9rem)',
+                lineHeight: 0.94,
+                color: 'rgba(244, 241, 234, 0.92)',
+                letterSpacing: '-0.03em',
+                textTransform: 'uppercase',
+                marginBottom: '2rem',
+                maxWidth: '680px',
+              }}
+            >
+              <span style={{ display: 'block' }}>
+                Onde ideias
+              </span>
+
+              <span style={{ display: 'block' }}>
+                se tornam
+              </span>
+
+              <span
+                style={{
+                  display: 'block',
+                  fontFamily: F.display,
+                  fontWeight: 400,
+                  fontSize: '0.74em',
+                  lineHeight: 1.05,
+                  letterSpacing: '0.05em',
+                  color: 'transparent',
+                  WebkitTextStroke: '1.2px #F4F1EA',
+                  textShadow: '0 0 10px rgba(244, 241, 234, 0.05)',
+                  marginTop: '0.12em',
+                  marginLeft: '0.12em',
+                  marginBottom: '0.12em',
+                }}
+              >
+                Marcas
+              </span>
+
+              <span style={{ display: 'block' }}>
+                memoráveis.
+              </span>
             </h1>
 
-            <p style={{ fontFamily: F.sans, fontSize: '0.93rem', lineHeight: 1.78, color: C.white, opacity: 0.47, maxWidth: '390px', marginBottom: '2.5rem' }}>
-              Um estúdio criativo independente onde estratégia, design e tecnologia se encontram para criar experiências digitais premium.
+            <p
+              style={{
+                fontFamily: F.sans,
+                fontSize: '0.93rem',
+                lineHeight: 1.78,
+                color: C.white,
+                opacity: 0.62,
+                maxWidth: '410px',
+                marginBottom: '2.5rem',
+              }}
+            >
+              Um estúdio criativo independente onde arte, design e
+              tecnologia se encontram para criar experiências digitais
+              memoráveis.
             </p>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '16px',
+                flexWrap: 'wrap',
+              }}
+            >
               <HoverButton variant="primary" label="Iniciar Projeto" />
-              <HoverButton variant="ghost"   label="Ver Trabalhos" />
+              <HoverButton variant="ghost" label="Ver Trabalhos" />
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '3.5rem' }}>
-              <span style={{ display: 'block', width: '1px', height: '40px', backgroundColor: 'rgba(244,241,234,0.12)' }} />
-              <span style={{ fontFamily: F.sans, fontSize: '0.6rem', letterSpacing: '0.22em', color: C.white, opacity: 0.28, textTransform: 'uppercase' }}>
-                Scroll
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                marginTop: '3.5rem',
+              }}
+            >
+              <span
+                style={{
+                  display: 'block',
+                  width: '1px',
+                  height: '40px',
+                  backgroundColor: 'rgba(244,241,234,0.12)',
+                }}
+              />
+
+              <span
+                style={{
+                  fontFamily: F.sans,
+                  fontSize: '0.6rem',
+                  letterSpacing: '0.22em',
+                  color: C.white,
+                  opacity: 0.28,
+                  textTransform: 'uppercase',
+                }}
+              >
+                Independent Creative Studio · Brazil
               </span>
             </div>
           </div>
 
           {/* Right: orbital */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 'clamp(300px, 42vw, 560px)' }}>
+          <div
+            className="translate-y-0 lg:-translate-y-15"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: 'clamp(300px, 42vw, 460px)',
+            }}
+          >
             <OrbitalDiagram />
           </div>
         </div>
       </div>
 
       {/* Ticker */}
-      <div style={{ borderTop: `1px solid ${C.lineSubtle}`, overflow: 'hidden', padding: '15px 0' }}>
-        <div style={{ display: 'flex', whiteSpace: 'nowrap', animation: 'ticker-scroll 30s linear infinite' }}>
+      <div
+        style={{
+          borderTop: `1px solid ${C.lineSubtle}`,
+          overflow: 'hidden',
+          padding: '15px 0',
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            whiteSpace: 'nowrap',
+            animation: 'ticker-scroll 30s linear infinite',
+          }}
+        >
           {[0, 1].map((_, i) => (
-            <div key={i} style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
+            <div
+              key={i}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                flexShrink: 0,
+              }}
+            >
               {TICKER.map((item, j) => (
-                <span key={j} style={{ display: 'inline-flex', alignItems: 'center', gap: '2.5rem', padding: '0 2.5rem', fontFamily: F.sans, fontSize: '0.62rem', letterSpacing: '0.24em', color: C.white, opacity: 0.17, textTransform: 'uppercase' }}>
+                <span
+                  key={j}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '2.5rem',
+                    padding: '0 2.5rem',
+                    fontFamily: F.sans,
+                    fontSize: '0.62rem',
+                    letterSpacing: '0.24em',
+                    color: C.white,
+                    opacity: 0.17,
+                    textTransform: 'uppercase',
+                  }}
+                >
                   {item}
                   <span style={{ color: C.orange, opacity: 0.55 }}>·</span>
                 </span>

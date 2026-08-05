@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { C, F, S } from '@/theme'
 import { NavLink } from './NavLink'
+import asteraLogo from '@/assets/brand/astera-logo-light.svg'
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
@@ -27,9 +28,27 @@ export function Navigation() {
         className="flex items-center justify-between"
         style={{ height: '72px', padding: `0 ${S.pageGutter}` }}
       >
-        <div style={{ fontFamily: F.heading, fontWeight: 900, fontSize: '1.25rem', letterSpacing: '0.14em', color: C.textPrimary }}>
-          ASTERA
-        </div>
+        <a
+          href="#"
+          aria-label="Astera"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            flexShrink: 0,
+          }}
+        >
+          <img
+            src={asteraLogo}
+            alt="Astera"
+            style={{
+              display: 'block',
+              width: '150px',
+              height: 'auto',
+              userSelect: 'none',
+              pointerEvents: 'none',
+            }}
+          />
+        </a>
 
         <div className="hidden md:flex items-center gap-8">
           {['Sobre', 'Serviços', 'Trabalhos', 'Processo', 'Contato'].map(item => (

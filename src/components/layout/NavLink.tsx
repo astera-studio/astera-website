@@ -14,14 +14,14 @@ export function NavLink({ label }: NavLinkProps) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        fontFamily: F.body,
-        color: C.textPrimary,
-        fontSize: '0.7rem',
-        letterSpacing: '0.16em',
-        opacity: hovered ? 0.9 : 0.42,
-        textDecoration: 'none',
+        fontFamily: F.sans,
+        fontSize: '0.72rem',
+        fontWeight: 500,
+        letterSpacing: '0.18em',
         textTransform: 'uppercase',
-        transition: 'opacity 0.3s',
+        color: hovered ? C.turquoise : C.white,
+        opacity: hovered ? 1 : 0.9,
+        transition: 'color .25s ease, opacity .25s ease',
       }}
     >
       {label}

@@ -13,6 +13,8 @@ export function NavLink({ label }: NavLinkProps) {
       href="#"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onFocus={() => setHovered(true)}
+      onBlur={() => setHovered(false)}
       style={{
         fontFamily: F.sans,
         fontSize: '0.72rem',

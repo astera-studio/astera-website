@@ -42,7 +42,7 @@ export function Navigation() {
             alt="Astera"
             style={{
               display: 'block',
-              width: '150px',
+              width: 'clamp(120px, 12vw, 150px)',
               height: 'auto',
               userSelect: 'none',
               pointerEvents: 'none',
@@ -50,27 +50,31 @@ export function Navigation() {
           />
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           {['Sobre', 'Serviços', 'Trabalhos', 'Processo', 'Contato'].map(item => (
             <NavLink key={item} label={item} />
           ))}
         </div>
 
         <button
-          className="hidden md:block"
+          type="button"
+          className="hidden lg:block"
           onMouseEnter={() => setCtaHovered(true)}
           onMouseLeave={() => setCtaHovered(false)}
+          onFocus={() => setCtaHovered(true)}
+          onBlur={() => setCtaHovered(false)}
           style={{
             fontFamily: F.body,
             fontSize: '0.68rem',
+            fontWeight: 600,
             letterSpacing: '0.16em',
             textTransform: 'uppercase',
             color: ctaHovered ? C.canvas : C.accentPrimary,
             backgroundColor: ctaHovered ? C.accentPrimary : 'transparent',
             border: `1px solid rgba(232,106,51,0.4)`,
-            padding: '10px 22px',
+            padding: '10px clamp(16px, 1.5vw, 22px)',
             cursor: 'pointer',
-            transition: 'all 0.3s ease',
+            transition: 'background-color 0.3s ease, color 0.3s ease',
           }}
         >
           Iniciar Projeto →

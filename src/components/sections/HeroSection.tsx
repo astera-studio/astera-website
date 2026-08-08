@@ -18,7 +18,7 @@ export function HeroSection() {
     <section
       style={{
         position: 'relative',
-        minHeight: '100vh',
+        minHeight: '100svh',
         display: 'flex',
         flexDirection: 'column',
         backgroundColor: C.black,
@@ -44,7 +44,7 @@ export function HeroSection() {
           padding: `clamp(7rem, 10vh, 8.5rem) ${S.pageGutter} clamp(2rem, 3vw, 3rem)`,
         }}
       >
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 lg:gap-16 items-center">
           {/* Left: copy */}
           <div>
             <div
@@ -70,7 +70,7 @@ export function HeroSection() {
                   fontFamily: F.sans,
                   fontSize: '0.64rem',
                   fontWeight: 500,
-                  letterSpacing: '0.28em',
+                  letterSpacing: '0.22em',
                   color: C.turquoise,
                   textTransform: 'uppercase',
                 }}
@@ -172,10 +172,11 @@ export function HeroSection() {
               <span
                 style={{
                   fontFamily: F.sans,
-                  fontSize: '0.6rem',
-                  letterSpacing: '0.22em',
+                  fontSize: '0.64rem',
+                  fontWeight: 500,
+                  letterSpacing: '0.18em',
                   color: C.white,
-                  opacity: 0.28,
+                  opacity: 0.5,
                   textTransform: 'uppercase',
                 }}
               >

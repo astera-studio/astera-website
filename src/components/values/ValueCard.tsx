@@ -14,7 +14,7 @@ export function ValueCard({ val }: ValueCardProps) {
       onMouseEnter={() => setH(true)}
       onMouseLeave={() => setH(false)}
       style={{
-        padding: 'clamp(1.5rem, 2.5vw, 2.5rem)',
+        padding: 'clamp(1.5rem, 2.4vw, 2.25rem)',
         borderTop: `2px solid ${h ? C.turquoise : 'transparent'}`,
         backgroundColor: h ? 'rgba(70,121,120,0.038)' : 'transparent',
         transition: `all ${M.uiFeedback}`,
@@ -22,17 +22,17 @@ export function ValueCard({ val }: ValueCardProps) {
         boxSizing: 'border-box',
       }}
     >
-      <div style={{ fontFamily: F.sans, fontSize: '1.35rem', color: C.turquoise, marginBottom: '0.875rem', opacity: h ? 0.9 : 0.52, transition: `opacity ${M.uiFeedback}` }}>
+      <div style={{ fontFamily: F.sans, fontSize: '1.35rem', lineHeight: 1, color: C.turquoise, marginBottom: '1rem', opacity: h ? 0.92 : 0.66, transition: `opacity ${M.uiFeedback}` }}>
         {val.sym}
       </div>
-      <div style={{ fontFamily: F.sans, fontSize: '0.6rem', letterSpacing: '0.15em', color: C.turquoise, opacity: 0.52, marginBottom: '0.65rem' }}>
+      <div style={{ fontFamily: F.sans, fontSize: '0.66rem', fontWeight: 500, letterSpacing: '0.12em', color: C.turquoise, opacity: 0.78, marginBottom: '0.75rem' }}>
         {val.num}
       </div>
-      <h3 style={{ fontFamily: F.display, fontWeight: 800, fontSize: 'clamp(1.05rem, 1.6vw, 1.25rem)', textTransform: 'uppercase', color: C.white, letterSpacing: '0.08em', marginBottom: '0.65rem' }}>
+      <h3 style={{ fontFamily: F.display, fontWeight: 800, fontSize: 'clamp(1.05rem, 1.55vw, 1.3rem)', lineHeight: 1.1, textTransform: 'uppercase', color: C.textPrimary, letterSpacing: 0, marginBottom: '0.8rem', textWrap: 'balance' }}>
         {val.title}
       </h3>
-      <div style={{ width: '20px', height: '1px', backgroundColor: h ? C.orange : 'rgba(244,241,234,0.13)', marginBottom: '0.65rem', transition: `background-color ${M.uiFeedback}` }} />
-      <p style={{ fontFamily: F.sans, fontSize: '0.82rem', lineHeight: 1.72, color: C.white, opacity: 0.43 }}>
+      <div style={{ width: '20px', height: '1px', backgroundColor: h ? C.orange : 'rgba(244,241,234,0.2)', marginBottom: '0.85rem', transition: `background-color ${M.uiFeedback}` }} />
+      <p style={{ fontFamily: F.sans, fontSize: 'clamp(0.88rem, 1vw, 0.95rem)', fontWeight: 500, lineHeight: 1.65, color: 'rgba(244,241,234,0.68)', maxWidth: '34rem' }}>
         {val.body}
       </p>
     </div>

@@ -1,5 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
 @import 'tailwindcss';
+
+@font-face {
+  font-family: "ASTERAV1";
+  src: url("./assets/fonts/ASTERAV1.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-canvas: #090909;
+  --color-text-primary: #F4F1EA;
+  --color-accent-primary: #E86A33;
+  --color-accent-technical: #467978;
+  --color-line-subtle: rgba(244, 241, 234, 0.065);
+  --color-surface-alternative: #0b0b0b;
+
+  --font-display: "ASTERAV1", sans-serif;
+  --font-editorial: "Playfair Display", serif;
+  --font-sans: "DM Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 72px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
 
 @keyframes spin-orbital {
   from { transform: rotate(0deg); }

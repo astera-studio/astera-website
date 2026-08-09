@@ -15,13 +15,13 @@ Originally developed through Figma Make and exported to GitHub. The project is n
 
 ## Current Phase
 
-Phase 3 — Astera visual identity refinement.
+Phase 3 — Astera visual identity refinement — completed for the homepage section cycle.
 
 Phases 1 and 2 are complete.
 
-The current priority is visual refinement, not architectural reconstruction.
+The next priority is Phase 4: transversal visual polish, accessibility, performance, asset review, SEO basics, and production readiness.
 
-Do not perform architectural refactors unless explicitly requested.
+Do not restart section-by-section redesign or perform architectural refactors unless explicitly requested.
 
 ## Project Structure
 
@@ -40,6 +40,8 @@ Follow imports or inspect additional files only when required to complete the ta
 - `src/types` — Shared TypeScript types.
 - `src/assets/brand` — Official ASTERA brand assets.
 - `src/assets/fonts` — Local ASTERA fonts.
+- `src/assets/projects` — Temporary conceptual artwork used by Selected Work.
+- `src/constants` — Shared stable destinations such as the project-start form.
 - `vite.config.ts` — Vite configuration.
 - `package.json` — Dependencies and project scripts.
 

@@ -40,8 +40,10 @@ Transformar o export inicial do Figma Make em uma base profissional, organizada,
 - Build funcionando normalmente.
 - Vite configurado na porta 8443.
 - Refatoração incremental concluída nas Fases 1 e 2.
-- Fase 3 iniciada.
-- Primeira dobra da página passou por refinamento de identidade.
+- Ciclo de refinamento das seções da homepage concluído na Fase 3.
+- Navigation, Hero, About, Services, Process, Projects, Values, Contact e Footer foram refinados e validados responsivamente.
+- Navegação interna da homepage utiliza âncoras nativas com offset para o header fixo.
+- Próxima etapa concentrada em polimento transversal e preparação para produção.
 - Branch `refactor/astera-v1` utilizada para a refatoração.
 
 ---
@@ -271,7 +273,7 @@ Token compartilhado:
 
 ## Status
 
-🚧 Em desenvolvimento
+🚧 Em desenvolvimento contínuo
 
 Foi iniciada a substituição de elementos provisórios por assets próprios da Astera.
 
@@ -279,6 +281,8 @@ Foi iniciada a substituição de elementos provisórios por assets próprios da 
 
 - `src/assets/brand`
 - `src/assets/fonts`
+- `src/assets/projects`
+- `src/assets/about`
 
 ### Logotipo
 
@@ -308,6 +312,14 @@ A fonte personalizada está armazenada como:
 `src/assets/fonts/ASTERAV1.ttf`
 
 e integrada através de `@font-face`.
+
+### Trabalhos conceituais
+
+As imagens em `src/assets/projects` sustentam temporariamente a seção de Projetos Selecionados enquanto os estudos de caso reais da Astera são desenvolvidos. Esses materiais representam explorações criativas e não trabalhos concluídos para clientes.
+
+### Asset experimental retido
+
+O arquivo `src/assets/about/esfera.svg` permanece no repositório como asset de marca potencial, mas não integra a composição atual da seção About. A versão aprovada da seção permanece limpa, sem esfera animada e sem glow difuso.
 
 ---
 
@@ -367,7 +379,7 @@ Isso permite que a interface permaneça sofisticada sem excesso de efeitos.
 
 ## Status
 
-🚧 Refinamento avançado
+✅ Refinamento concluído no ciclo da Fase 3
 
 A Hero foi a primeira seção trabalhada na Fase 3 e passou a funcionar como principal referência visual para a evolução das demais seções do site.
 
@@ -408,7 +420,7 @@ Texto atual:
 
 **Um estúdio criativo independente onde arte, design e tecnologia se encontram para criar experiências digitais memoráveis.**
 
-A legibilidade dos textos secundários deverá continuar sendo revisada, principalmente em relação a:
+A legibilidade dos textos secundários foi refinada principalmente em relação a:
 
 - contraste;
 - opacidade;
@@ -478,7 +490,7 @@ Foram revisados:
 
 ## Status
 
-🚧 Refinamento iniciado
+✅ Refinamento concluído no ciclo da Fase 3
 
 O logotipo textual provisório da navbar foi substituído pelo SVG oficial da Astera.
 
@@ -501,17 +513,39 @@ Os links de navegação devem utilizar:
 
 A navbar mantém estética minimalista e técnica, evitando efeitos excessivos.
 
+## Comportamento responsivo
+
+- navegação completa disponível a partir de `1024px`;
+- menu compacto com overlay abaixo desse breakpoint;
+- fechamento por destino selecionado ou `Escape`;
+- controle de foco e bloqueio do scroll da página durante a abertura do menu;
+- mesmos destinos preservados em desktop, tablet e mobile.
+
+## Navegação interna
+
+Os links utilizam âncoras nativas para os alvos:
+
+- `#about`;
+- `#services`;
+- `#work`;
+- `#process`;
+- `#contact`.
+
+O logotipo retorna para `#top`. O scroll suave é definido globalmente, com `scroll-margin-top: 72px` nas seções para compensar o header fixo e fallback sem animação quando `prefers-reduced-motion: reduce` está ativo.
+
 ## CTA
 
 O botão **Iniciar Projeto** permanece como ação principal da Navigation.
 
 Seu tratamento visual utiliza o laranja queimado como elemento de destaque sem competir com o restante da composição.
 
+O CTA permanece externo e utiliza o fluxo oficial de diagnóstico inicial da Astera.
+
 ---
 
 # 12. Tipografia de Interface e Legibilidade
 
-Foi identificada a necessidade de padronizar textos pequenos utilizados como:
+Durante a Fase 3, os textos pequenos utilizados como:
 
 - eyebrows;
 - navigation;
@@ -526,13 +560,13 @@ A combinação de:
 - baixo contraste;
 - peso leve
 
-pode prejudicar a leitura.
+foi evitada nos refinamentos aprovados por prejudicar a leitura.
 
 ## Diretriz
 
-Esses textos deverão utilizar pesos intermediários, aproximadamente `500`, mantendo a aparência técnica sem comprometer a legibilidade.
+Esses textos utilizam pesos intermediários, aproximadamente `500`, mantendo a aparência técnica sem comprometer a legibilidade.
 
-A criação de tokens tipográficos semânticos adicionais poderá ser realizada posteriormente, evitando alterações estruturais prematuras.
+A criação de tokens tipográficos semânticos adicionais permanece opcional para a Fase 4 e só deve ocorrer se padrões reais de reutilização justificarem a alteração.
 
 ## Contraste
 
@@ -561,7 +595,7 @@ Pequenos raios de borda entre 4–8px e sombras discretas poderão ser utilizado
 
 ## Status
 
-🚧 Em andamento
+✅ Concluída — ciclo de refinamento das seções da homepage
 
 ## Objetivo
 
@@ -569,121 +603,199 @@ Transformar a fundação arquitetural e o Design System inicial em uma interface
 
 ---
 
-## 3.1 — Tipografia e identidade inicial
+## 3.1 — Navigation e Hero
 
 ### Status
 
-🚧 Parcialmente concluída
+✅ Concluída
 
-### Concluído
+### Entregas
 
-- integração da ASTERAV1;
-- organização das fontes locais;
-- integração do SVG oficial da marca;
-- revisão inicial da hierarquia da Hero;
-- substituição da headline;
-- revisão de escala tipográfica;
-- definição inicial do papel da ASTERAV1;
-- revisão da Navigation;
-- identificação de melhorias de legibilidade para microtipografia.
-
-### Pendente
-
-- padronizar pesos de eyebrows, metadata, ticker e navigation;
-- revisar hierarquia tipográfica nas demais seções;
-- avaliar usos editoriais da Playfair Display;
-- revisar comportamento tipográfico em tablet e mobile.
+- logotipo oficial aplicado na Navigation;
+- navegação completa em desktop a partir de `1024px`;
+- menu compacto com overlay em tablet e mobile;
+- interação por teclado, fechamento por `Escape`, controle de foco e bloqueio do scroll durante o menu aberto;
+- Hero consolidada como principal referência visual do site;
+- headline em quatro linhas com tratamento ASTERAV1/outline em `MARCAS`;
+- refinamentos de primeira dobra, espaçamento, legibilidade e equilíbrio responsivo;
+- Orbital Diagram preservado em comportamento e animação;
+- CTAs e assinaturas editoriais preservados com melhor legibilidade.
 
 ---
 
-## 3.2 — Paleta completa
+## 3.2 — About
 
 ### Status
 
-⏳ Pendente
+✅ Concluída
 
-### Objetivos
+### Identidade
 
-- introduzir cores secundárias;
-- definir contextos de uso;
-- revisar contrastes;
-- validar acessibilidade;
-- evitar uso excessivo das cores de destaque.
+- `01 — INDEPENDENTE` — Estrutura enxuta, próxima e colaborativa.
+- `02 — POTIGUAR` — Criado no Rio Grande do Norte, conectado ao mundo.
+- `03 — DIGITAL FIRST` — Pensado para marcas e experiências no ambiente digital.
+
+As métricas comerciais fictícias foram removidas e não foram substituídas por novos números inventados.
+
+### Manifesto atual
+
+**Acreditamos que marcas relevantes não são construídas por acaso.**
+
+**Elas nascem de boas perguntas, decisões conscientes e da capacidade de transformar ideias em experiências que fazem sentido para as pessoas.**
+
+A composição aprovada permanece limpa e editorial: fundo preto, eyebrow centralizada, manifesto em Playfair Display, texto de apoio em DM Sans, pequeno divisor laranja e espaço negativo generoso.
+
+Os experimentos com glow difuso e `esfera.svg` foram descartados da implementação. O asset permanece retido no repositório para possível uso futuro, sem renderização na seção atual.
 
 ---
 
-## 3.3 — Design Tokens avançados
+## 3.3 — Services
 
 ### Status
 
-⏳ Pendente
+✅ Concluída
 
-Definir quando necessário:
+### Introdução
 
-- radius;
-- shadows;
-- blur;
-- gradients;
-- opacidades;
-- overlays;
-- tokens tipográficos adicionais.
+**Da identidade ao produto digital, criamos soluções pensadas para cada etapa da marca.**
 
-Novos tokens devem ser criados apenas quando houver padrões reais de reutilização.
+### Áreas de atuação
+
+1. `BRAND IDENTITY` — Identidade Visual;
+2. `WEB DESIGN` — Design & Desenvolvimento;
+3. `E COMMERCE` — Comércio Digital;
+4. `UI/UX DESIGN` — Experiências Digitais;
+5. `CREATIVE DIRECTION` — Direção Criativa.
+
+Os títulos utilizam ASTERAV1 sem distorção horizontal. Subtítulos, descrições, metadata e tags receberam contraste e peso mais legíveis. A composição usa uma coluna no mobile, duas no tablet e uma grade editorial de seis colunas no desktop, com três serviços na primeira linha e dois cards mais largos na segunda.
+
+A seção descreve a prática criativa e digital da Astera, sem posicionamento como agência de marketing, mídia paga, tráfego ou publicidade.
 
 ---
 
-## 3.4 — Assets proprietários
+## 3.4 — Process
 
 ### Status
 
-🚧 Iniciada
+✅ Concluída
 
-Assets atuais e planejados:
+### Etapas atuais
 
-- logo oficial;
-- versão clara da logo;
-- esfera metálica;
-- Orbital Diagram refinado;
-- elementos gráficos;
-- ícones.
+1. `DISCOVERY` — Imersão
 
-A prioridade é reduzir progressivamente a dependência de elementos provisórios herdados da versão inicial.
+   Começamos pelas perguntas certas. Entendemos o contexto, os objetivos e os desafios da marca antes de definir qualquer direção.
+2. `STRATEGY` — Direção
+
+   Transformamos os aprendizados em uma direção clara, definindo prioridades e decisões que orientam todo o projeto.
+3. `DESIGN` — Criação
+
+   A direção ganha forma através de conceitos, sistemas visuais e experiências que traduzem a essência e os objetivos da marca.
+4. `DEVELOPMENT` — Desenvolvimento
+
+   Transformamos o design em experiências digitais funcionais, responsivas e acessíveis, com atenção à performance e aos detalhes técnicos.
+5. `DELIVERY` — Entrega
+
+   Finalizamos o projeto com cuidado, organizamos os materiais e preparamos tudo o que a marca precisa para seguir com clareza e autonomia.
+
+`EVOLUTION` foi removida do processo. A implementação mantém lista interativa, estado ativo, painel editorial em desktop, conteúdo completo em mobile/tablet, ativação por clique/toque/teclado e foco visível.
 
 ---
 
-## 3.5 — Refinamento visual
+## 3.5 — Projects / Selected Work
 
 ### Status
 
-⏳ Pendente
+✅ Concluída como composição conceitual temporária
 
-- animações;
-- microinterações;
-- estados de hover;
-- espaçamentos finais;
-- refinamento dos grids;
-- responsividade fina;
-- acessibilidade.
+Os projetos fictícios gerados no Figma, seus clientes e anos foram removidos. A seção utiliza temporariamente quatro explorações conceituais:
 
-As animações devem permanecer discretas e funcionais, evitando excesso de movimento.
+1. `VISUAL SYSTEMS` — Brand Identity · Art Direction;
+2. `DIGITAL SYSTEMS` — UI/UX · Digital Experience;
+3. `BRAND SYSTEMS` — Brand Identity · Editorial;
+4. `EXPERIMENTAL` — Creative Direction · Digital Art.
+
+Essas explorações não representam cases concluídos para clientes. O CTA `VER TODOS →` foi preservado para a futura integração dos estudos de caso reais.
+
+As imagens mantêm suas cores originais. Os cards usam gradientes localizados na área de metadata, com tratamento específico para o artwork claro de Brand Systems. A grade permanece em duas colunas a partir do tablet e em uma coluna no mobile.
 
 ---
 
-## 3.6 — Conteúdo definitivo
+## 3.6 — Values
 
 ### Status
 
-⏳ Pendente
+✅ Concluída
 
-- textos;
-- portfólio;
-- serviços;
-- CTAs;
-- SEO.
+Valores atuais:
+
+- Estratégia;
+- Excelência;
+- Transparência;
+- Criatividade;
+- Evolução.
+
+A composição funciona como uma tabela editorial contínua, organizada em `3 + 2` no desktop, `2 + 2 + 1` no tablet e coluna única no mobile. ASTERAV1 permanece expressiva nos títulos sem compressão artificial, enquanto descrições, índices e símbolos receberam melhor legibilidade.
 
 ---
 
-# 15. Fase 4 — Preparação para Produção
+## 3.7 — Contact e Footer
+
+### Status
+
+✅ Concluída no ciclo da Fase 3
+
+### CTA final
+
+Headline atual:
+
+**Vamos construir o próximo passo da sua marca.**
+
+Texto de apoio:
+
+**Vamos transformar sua ideia em uma experiência digital que faça sentido para sua marca.**
+
+O CTA `INICIAR PROJETO →` utiliza o destino oficial do Diagnóstico Inicial da Astera, centralizado em `src/constants/links.ts` e aberto em nova aba.
+
+Destino técnico atual: `https://docs.google.com/forms/d/e/1FAIpQLSe9xpdAbO6aHZVDv4_kGNNUMElkd-UxSFJAPhL2BjNiHw8A0w/viewform?usp=dialog`.
+
+### Contatos oficiais
+
+- Email — `goastera.contato@gmail.com`;
+- Instagram — `@goastera`;
+- LinkedIn — `Astera Studio`.
+
+### Footer
+
+- `ASTERA`;
+- `INDEPENDENT CREATIVE STUDIO`;
+- `© 2026 ASTERA`;
+- navegação institucional preservada.
+
+---
+
+## 3.8 — Hierarquia global, navegação e QA
+
+### Status
+
+✅ Concluída no escopo das seções
+
+- a Hero permanece como momento tipográfico mais forte;
+- headings internos foram reduzidos por meio do componente compartilhado `SectionHeading`;
+- ASTERAV1 permanece seletiva e não domina todas as seções;
+- Off White `#F4F1EA` é a referência para tipografia clara;
+- textos de apoio usam DM Sans, peso intermediário e contraste secundário legível;
+- destinos `top`, `about`, `services`, `work`, `process` e `contact` estão implementados;
+- scroll interno usa âncoras nativas, comportamento suave e offset de `72px` para o header fixo;
+- o CTA de projeto permanece externo;
+- foram realizados ciclos de QA responsivo em mobile, tablet, desktop e viewports altos.
+
+## Limite desta conclusão
+
+A conclusão da Fase 3 representa o encerramento do refinamento seção por seção da homepage. Revisões transversais de acessibilidade, performance, semântica, otimização de assets, configuração e preparação para deploy pertencem à Fase 4.
+
+---
+
+# 15. Fase 4 — Final Polish & Production Readiness
 
 ## Status
 
@@ -691,26 +803,35 @@ As animações devem permanecer discretas e funcionais, evitando excesso de movi
 
 ## Checklist
 
+- revisar ritmo visual da página completa;
+- revisar consistência de espaçamento entre seções;
+- executar QA responsivo final em breakpoints e proporções representativas;
+- revisar acessibilidade, semântica HTML, navegação por teclado e estados de foco;
+- revisar comportamento com `prefers-reduced-motion`;
+- validar todos os links internos e externos, incluindo Footer e CTAs ainda provisórios;
+- revisar contraste e legibilidade em contexto de página completa;
+- avaliar conversão dos PNGs de Projects para WebP/AVIF quando apropriado;
+- otimizar imagens, SVGs e estratégia de carregamento;
+- revisar performance, loading e bundle;
+- revisar assets não utilizados e código experimental residual;
+- revisar os dois lockfiles e definir o gerenciador de pacotes autoritativo;
 - revisar configurações do Vite;
-- avaliar remoção das dependências do Figma Make;
+- avaliar limpeza da configuração e das dependências herdadas do Figma Make;
 - revisar avisos relacionados ao `configLoader: native`;
 - revisar uso de `__dirname` no `vite.config.ts`;
 - revisar importação JSON utilizada pela configuração do Figma Make;
-- revisar SEO;
+- revisar metadata e fundamentos de SEO;
 - configurar Open Graph;
-- inserir favicon definitivo;
-- otimizar SVGs;
-- otimizar imagens;
-- revisar bundle;
+- revisar e inserir favicon definitivo;
 - executar Lighthouse;
-- configurar deploy definitivo;
-- revisar analytics.
+- revisar analytics, se aplicável;
+- preparar configuração e checklist de deploy definitivo.
 
 ---
 
 # 16. Validação
 
-As Fases 1 e 2 foram validadas com:
+As Fases 1, 2 e o ciclo de homepage da Fase 3 foram validados continuamente com:
 
 - `npx tsc --noEmit`
 - `npm run build`
@@ -722,7 +843,7 @@ As Fases 1 e 2 foram validadas com:
 - `git diff --check`;
 - `git status`.
 
-Durante a Fase 3 também foram realizadas validações visuais contínuas da Hero e da Navigation em ambiente local.
+Durante a Fase 3 foram realizadas validações visuais das seções e interações em viewports mobile, tablet, desktop e desktop/tablet altos. A navegação interna, o menu responsivo, o processo interativo, o carregamento da ASTERAV1, os CTAs externos e o overflow horizontal também foram verificados.
 
 O projeto permanece disponível através do Vite na porta `8443`.
 
@@ -735,16 +856,21 @@ Os avisos existentes do Vite permanecem documentados e não impedem atualmente o
 Até o momento, foram consolidadas as seguintes decisões:
 
 - a identidade deve permanecer minimalista e editorial;
-- o retrofuturismo deve ser utilizado com contenção;
+- o editorial retrofuturista com precisão técnica permanece como direção central;
+- a Hero permanece como principal referência visual e momento tipográfico mais forte;
 - a ASTERAV1 funciona principalmente como assinatura de marca e elemento display pontual;
 - DM Sans permanece como base funcional da interface;
-- Playfair Display permanece disponível como recurso editorial;
+- Playfair Display permanece como voz editorial;
 - o Orbital Diagram é um elemento importante da identidade digital;
 - a animação orbital atual deve ser preservada;
 - o laranja é utilizado como acento, não como cor dominante;
 - o turquesa funciona como cor técnica e interativa;
 - o Off White substitui o branco puro para reduzir contraste excessivamente agressivo;
-- microtipografia deve priorizar legibilidade mesmo quando utilizada com tracking elevado;
+- headings internos são intencionalmente menos dominantes que a Hero;
+- microtipografia deve priorizar legibilidade, com tracking, peso e opacidade controlados;
+- Projects utiliza explorações conceituais temporárias, nunca clientes ou cases fictícios;
+- About utiliza composição editorial limpa, sem esfera ou glow difuso;
+- espaço negativo permanece uma decisão composicional intencional;
 - elementos decorativos devem possuir função dentro da composição;
 - efeitos futuristas não devem competir com o conteúdo;
 - a interface deve evitar tendências visuais excessivamente efêmeras.
@@ -753,25 +879,25 @@ Até o momento, foram consolidadas as seguintes decisões:
 
 # 18. Próximos Passos
 
-1. Finalizar a etapa 3.1.
-2. Padronizar a microtipografia e melhorar sua legibilidade.
-3. Revisar Hero e Navigation em diferentes breakpoints.
-4. Aplicar a mesma linguagem visual às demais seções.
-5. Introduzir gradualmente a paleta complementar.
-6. Desenvolver e integrar os demais assets proprietários.
-7. Refinar grids, espaçamentos e ritmo editorial.
-8. Implementar microinterações de forma criteriosa.
-9. Revisar acessibilidade e contraste.
-10. Finalizar conteúdo e portfólio.
-11. Executar a preparação para produção.
+1. Executar revisão visual transversal da página completa.
+2. Validar espaçamentos e transições entre seções sem reiniciar redesigns locais.
+3. Concluir revisão de acessibilidade, teclado, foco, reduced motion e semântica.
+4. Validar todos os links internos e externos ainda provisórios.
+5. Otimizar imagens, assets e carregamento.
+6. Avaliar conversão dos artworks PNG para formatos modernos.
+7. Revisar configuração do Vite e dependências herdadas do Figma Make.
+8. Resolver a definição do lockfile/gerenciador de pacotes autoritativo.
+9. Revisar favicon, metadata, SEO e Open Graph.
+10. Executar análise de bundle e Lighthouse.
+11. Preparar deploy e analytics, quando aplicável.
 
 ---
 
 # 19. Direção para a Continuação
 
-A prioridade deixa de ser reconstruir a interface e passa a ser **refinar um sistema visual que já começou a adquirir identidade própria**.
+A prioridade deixa de ser refinar cada seção isoladamente e passa a ser **validar o sistema visual como uma experiência completa e prepará-lo para produção**.
 
-A Hero estabelece a referência visual para as próximas seções.
+A Hero permanece como referência visual para decisões transversais.
 
 A partir dela, o restante do site deverá preservar:
 

@@ -37,10 +37,10 @@ export function HeroSection() {
 
       {/* Main content */}
       <div
+        className="items-start [@media(min-width:1024px)_and_(min-height:1000px)]:items-center"
         style={{
           flex: 1,
           display: 'flex',
-          alignItems: 'flex-start',
           padding: `clamp(7rem, 10vh, 8.5rem) ${S.pageGutter} clamp(2rem, 3vw, 3rem)`,
         }}
       >

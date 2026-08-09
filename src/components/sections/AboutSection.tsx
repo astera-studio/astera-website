@@ -21,6 +21,7 @@ const IDENTITIES = [
 export function AboutSection() {
   return (
     <section
+      id="about"
       style={{
         backgroundColor: C.black,
         padding: `${S.sectionPaddingY} ${S.pageGutter}`,

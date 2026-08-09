@@ -45,6 +45,7 @@ export function PortfolioSection() {
 
   return (
     <section
+      id="work"
       style={{
         backgroundColor: C.surfaceAlternative,
         padding: `${S.sectionPaddingY} ${S.pageGutter}`,

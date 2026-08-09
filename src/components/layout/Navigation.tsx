@@ -4,7 +4,13 @@ import { NavLink } from './NavLink'
 import asteraLogo from '@/assets/brand/astera-logo-light.svg'
 import { PROJECT_START_URL } from '@/constants/links'
 
-const NAV_ITEMS = ['Sobre', 'Serviços', 'Trabalhos', 'Processo', 'Contato']
+const NAV_ITEMS = [
+  { label: 'Sobre', href: '#about' },
+  { label: 'Serviços', href: '#services' },
+  { label: 'Trabalhos', href: '#work' },
+  { label: 'Processo', href: '#process' },
+  { label: 'Contato', href: '#contact' },
+]
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
@@ -84,7 +90,7 @@ export function Navigation() {
         style={{ height: '72px', padding: `0 ${S.pageGutter}` }}
       >
         <a
-          href="#"
+          href="#top"
           aria-label="Astera"
           style={{
             display: 'inline-flex',
@@ -107,7 +113,7 @@ export function Navigation() {
 
         <div className="hidden lg:flex items-center gap-8">
           {NAV_ITEMS.map(item => (
-            <NavLink key={item} label={item} />
+            <NavLink key={item.href} label={item.label} href={item.href} />
           ))}
         </div>
 
@@ -262,7 +268,7 @@ export function Navigation() {
               }}
             >
               {NAV_ITEMS.map(item => (
-                <NavLink key={item} label={item} mobile onClick={() => setMenuOpen(false)} />
+                <NavLink key={item.href} label={item.label} href={item.href} mobile onClick={() => setMenuOpen(false)} />
               ))}
             </div>
 

@@ -40,6 +40,7 @@ function getServiceGridClass(index: number) {
 export function ServicesSection() {
   return (
     <section
+      id="services"
       style={{
         backgroundColor: C.surfaceAlternative,
         padding: `${S.sectionPaddingY} ${S.pageGutter}`,

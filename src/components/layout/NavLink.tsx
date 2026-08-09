@@ -3,16 +3,17 @@ import { C, F } from '@/theme'
 
 type NavLinkProps = {
   label: string
+  href: string
   mobile?: boolean
   onClick?: () => void
 }
 
-export function NavLink({ label, mobile = false, onClick }: NavLinkProps) {
+export function NavLink({ label, href, mobile = false, onClick }: NavLinkProps) {
   const [hovered, setHovered] = useState(false)
 
   return (
     <a
-      href="#"
+      href={href}
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}

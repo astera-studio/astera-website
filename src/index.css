@@ -22,6 +22,21 @@
   --font-editorial: "Playfair Display", serif;
   --font-sans: "DM Sans", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 72px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 @keyframes spin-orbital {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }

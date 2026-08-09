@@ -41,7 +41,7 @@ export function ProcessSection() {
   const step = PROCESS[active]
 
   return (
-    <section style={{ backgroundColor: C.black, padding: `${S.sectionPaddingY} ${S.pageGutter}` }}>
+    <section id="process" style={{ backgroundColor: C.black, padding: `${S.sectionPaddingY} ${S.pageGutter}` }}>
      <SectionHeader index="02" label="Processo">
       Como<br />trabalhamos
      </SectionHeader>

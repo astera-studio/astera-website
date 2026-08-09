@@ -17,6 +17,7 @@ const TICKER = [
 export function HeroSection() {
   return (
     <section
+      id="top"
       style={{
         position: 'relative',
         minHeight: '100svh',

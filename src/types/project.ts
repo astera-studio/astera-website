@@ -3,6 +3,6 @@ export type Project = {
   num: string
   title: string
   category: string
-  year: string
   image: string
+  lightArtwork?: boolean
 }

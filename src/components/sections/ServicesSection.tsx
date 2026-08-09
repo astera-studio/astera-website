@@ -6,30 +6,36 @@ import { C, F, S } from '@/theme'
 const SERVICES: Service[] = [
   {
     num: '01', title: 'Brand Identity', subtitle: 'Identidade Visual',
-    description: 'Criamos identidades visuais que comunicam a essência da sua marca com precisão e elegância. Do naming ao sistema completo de design.',
-    tags: ['Naming', 'Logo', 'Sistema Visual', 'Brand Guidelines'],
+    description: 'Estratégia de marca, identidade visual e sistemas consistentes para construir marcas reconhecíveis.',
+    tags: ['Estratégia', 'Identidade', 'Sistema Visual'],
   },
   {
     num: '02', title: 'Web Design', subtitle: 'Design & Desenvolvimento',
-    description: 'Websites que unem estética refinada e performance técnica. Cada projeto é desenvolvido sob medida, com foco na conversão e na experiência do usuário.',
-    tags: ['UI Design', 'Desenvolvimento', 'CMS', 'Performance'],
+    description: 'Landing pages e sites institucionais que unem direção visual, usabilidade e desenvolvimento.',
+    tags: ['UI/UX', 'Desenvolvimento', 'Responsivo'],
   },
   {
-    num: '03', title: 'Digital Experiences', subtitle: 'Experiências Digitais',
-    description: 'Plataformas e interfaces que definem padrões. Design sofisticado com tecnologia de ponta para criar algo verdadeiramente memorável.',
-    tags: ['UI/UX', 'Interação', 'Motion', 'Prototipagem'],
+    num: '03', title: 'E Commerce', subtitle: 'Comércio Digital',
+    description: 'Lojas virtuais pensadas para unir experiência de marca, clareza de navegação e conversão.',
+    tags: ['Nuvemshop', 'UX', 'Conversão'],
   },
   {
-    num: '04', title: 'E-commerce', subtitle: 'Comércio Digital',
-    description: 'Lojas online que convertem visitantes em clientes leais. Design orientado a resultados, sem abrir mão da elegância da marca.',
-    tags: ['Shopify', 'WooCommerce', 'Estratégia', 'UX'],
+    num: '04', title: 'UI/UX Design', subtitle: 'Experiências Digitais',
+    description: 'Interfaces e experiências construídas a partir das necessidades das pessoas e dos objetivos do negócio.',
+    tags: ['Interface', 'Experiência', 'Prototipação'],
   },
   {
     num: '05', title: 'Creative Direction', subtitle: 'Direção Criativa',
-    description: 'Consultoria estratégica de alto nível para marcas que querem elevar seu posicionamento. Da análise competitiva à curadoria visual completa.',
-    tags: ['Estratégia', 'Art Direction', 'Consultoria', 'Posicionamento'],
+    description: 'Direção visual e conceitual para construir presença, coerência e personalidade nos pontos de contato da marca.',
+    tags: ['Direção de Arte', 'Linguagem Visual', 'Conceito'],
   },
 ]
+
+function getServiceGridClass(index: number) {
+  if (index < 3) return 'md:col-span-1 lg:col-span-2'
+  if (index === 3) return 'md:col-span-1 lg:col-span-3'
+  return 'md:col-span-2 lg:col-span-3'
+}
 
 export function ServicesSection() {
   return (
@@ -44,18 +50,17 @@ export function ServicesSection() {
         label="Serviços"
         aside={
           <p
-            className="hidden md:block"
+            className="block text-left md:text-right"
             style={{
               fontFamily: F.sans,
-              fontSize: '0.85rem',
-              color: C.white,
-              opacity: 0.36,
-              maxWidth: '250px',
-              lineHeight: 1.72,
-              textAlign: 'right',
+              fontSize: '0.93rem',
+              fontWeight: 500,
+              color: 'rgba(244,241,234,0.62)',
+              maxWidth: '360px',
+              lineHeight: 1.65,
             }}
           >
-            Serviços completos de design e tecnologia para marcas que querem se destacar.
+            Da identidade ao produto digital, criamos soluções pensadas para cada etapa da marca.
           </p>
         }
       >
@@ -64,9 +69,11 @@ export function ServicesSection() {
         fazemos
       </SectionHeader>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
         {SERVICES.map((svc, i) => (
-          <ServiceCard key={i} svc={svc} />
+          <div key={svc.num} className={getServiceGridClass(i)}>
+            <ServiceCard svc={svc} />
+          </div>
         ))}
       </div>
     </section>

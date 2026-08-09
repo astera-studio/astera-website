@@ -14,36 +14,38 @@ export function ServiceCard({ svc }: ServiceCardProps) {
       onMouseEnter={() => setH(true)}
       onMouseLeave={() => setH(false)}
       style={{
+        display: 'flex',
+        flexDirection: 'column',
         backgroundColor: h ? 'rgba(70,121,120,0.052)' : 'transparent',
         border: `1px solid ${h ? 'rgba(70,121,120,0.28)' : C.lineSubtle}`,
-        padding: 'clamp(1.5rem, 2.5vw, 2.5rem)',
-        transition: 'all 0.4s ease',
+        padding: 'clamp(1.5rem, 2vw, 2.25rem)',
+        transition: 'background-color 0.4s ease, border-color 0.4s ease',
         cursor: 'default',
         position: 'relative',
         height: '100%',
         boxSizing: 'border-box',
       }}
     >
-      <div style={{ fontFamily: F.sans, fontSize: '0.6rem', letterSpacing: '0.2em', color: C.turquoise, opacity: 0.8, marginBottom: '1.5rem' }}>
+      <div style={{ fontFamily: F.sans, fontSize: '0.64rem', fontWeight: 500, letterSpacing: '0.18em', color: C.turquoise, marginBottom: '1.25rem' }}>
         {svc.num}
       </div>
 
-      <h3 style={{ fontFamily: F.display, fontWeight: 800, fontSize: 'clamp(1.3rem, 1.8vw, 1.65rem)', letterSpacing: '0.06em', textTransform: 'uppercase', color: C.white, lineHeight: 1, marginBottom: '5px' }}>
+      <h3 style={{ fontFamily: F.display, fontWeight: 800, fontSize: 'clamp(1.25rem, 1.65vw, 1.55rem)', letterSpacing: 0, textTransform: 'uppercase', color: C.textPrimary, lineHeight: 1.08, marginBottom: '7px', textWrap: 'balance' }}>
         {svc.title}
       </h3>
-      <p style={{ fontFamily: F.serif, fontStyle: 'italic', fontSize: '0.82rem', color: C.white, opacity: 0.36, marginBottom: '1.25rem' }}>
+      <p style={{ fontFamily: F.serif, fontStyle: 'italic', fontSize: '0.9rem', lineHeight: 1.45, color: 'rgba(244,241,234,0.62)', marginBottom: '1.125rem' }}>
         {svc.subtitle}
       </p>
 
-      <div style={{ width: h ? '40px' : '20px', height: '1px', backgroundColor: h ? C.orange : 'rgba(244,241,234,0.16)', transition: 'all 0.4s ease', marginBottom: '1.25rem' }} />
+      <div style={{ width: h ? '40px' : '20px', height: '1px', backgroundColor: h ? C.orange : 'rgba(244,241,234,0.16)', transition: 'width 0.4s ease, background-color 0.4s ease', marginBottom: '1.125rem' }} />
 
-      <p style={{ fontFamily: F.sans, fontSize: '0.84rem', lineHeight: 1.74, color: C.white, opacity: 0.46, marginBottom: '1.5rem' }}>
+      <p style={{ fontFamily: F.sans, fontSize: '0.92rem', fontWeight: 500, lineHeight: 1.7, color: 'rgba(244,241,234,0.62)', marginBottom: '1.25rem' }}>
         {svc.description}
       </p>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: 'auto' }}>
         {svc.tags.map(tag => (
-          <span key={tag} style={{ fontFamily: F.sans, fontSize: '0.57rem', letterSpacing: '0.13em', color: C.turquoise, opacity: 0.7, border: '1px solid rgba(70,121,120,0.22)', padding: '4px 10px', textTransform: 'uppercase' }}>
+          <span key={tag} style={{ fontFamily: F.sans, fontSize: '0.62rem', fontWeight: 500, letterSpacing: '0.1em', color: C.turquoise, border: '1px solid rgba(70,121,120,0.28)', padding: '5px 9px', textTransform: 'uppercase' }}>
             {tag}
           </span>
         ))}

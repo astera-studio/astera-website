@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { C, F, S } from '@/theme'
 import { NavLink } from './NavLink'
 import asteraLogo from '@/assets/brand/astera-logo-light.svg'
+import { PROJECT_START_URL } from '@/constants/links'
 
 const NAV_ITEMS = ['Sobre', 'Serviços', 'Trabalhos', 'Processo', 'Contato']
 
@@ -110,8 +111,10 @@ export function Navigation() {
           ))}
         </div>
 
-        <button
-          type="button"
+        <a
+          href={PROJECT_START_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden lg:block"
           onMouseEnter={() => setCtaHovered(true)}
           onMouseLeave={() => setCtaHovered(false)}
@@ -129,10 +132,11 @@ export function Navigation() {
             padding: '10px clamp(16px, 1.5vw, 22px)',
             cursor: 'pointer',
             transition: 'background-color 0.3s ease, color 0.3s ease',
+            textDecoration: 'none',
           }}
         >
           Iniciar Projeto →
-        </button>
+        </a>
 
         <button
           ref={menuButtonRef}
@@ -262,8 +266,10 @@ export function Navigation() {
               ))}
             </div>
 
-            <button
-              type="button"
+            <a
+              href={PROJECT_START_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
               className="focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-[#467978]"
               style={{
@@ -278,10 +284,11 @@ export function Navigation() {
                 border: '1px solid transparent',
                 padding: '13px 22px',
                 cursor: 'pointer',
+                textDecoration: 'none',
               }}
             >
               Iniciar Projeto →
-            </button>
+            </a>
           </div>
         </div>
       )}

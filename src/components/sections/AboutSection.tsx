@@ -23,8 +23,6 @@ export function AboutSection() {
     <section
       style={{
         backgroundColor: C.black,
-        backgroundImage:
-          'radial-gradient(ellipse 44% 38% at 103% 112%, rgba(232,106,51,0.22) 0%, rgba(232,106,51,0.12) 18%, rgba(232,106,51,0.045) 48%, rgba(232,106,51,0) 78%), radial-gradient(ellipse 84% 64% at 94% 110%, rgba(232,106,51,0.04) 0%, rgba(232,106,51,0.025) 40%, rgba(176,25,66,0.008) 60%, rgba(9,9,9,0) 82%)',
         padding: `${S.sectionPaddingY} ${S.pageGutter}`,
       }}
     >

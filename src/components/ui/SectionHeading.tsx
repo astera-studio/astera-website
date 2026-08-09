@@ -11,7 +11,7 @@ export default function SectionHeading({ children }: SectionHeadingProps) {
       style={{
         fontFamily: F.heading,
         fontWeight: 900,
-        fontSize: 'clamp(2.2rem, 4vw, 4.8rem)',
+        fontSize: 'clamp(2rem, 3.25vw, 3.9rem)',
         textTransform: 'uppercase',
         color: C.textPrimary,
         lineHeight: 0.91,

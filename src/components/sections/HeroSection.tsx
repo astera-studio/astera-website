@@ -1,6 +1,7 @@
 import { HoverButton } from '@/components/ui'
 import OrbitalDiagram from '@/components/graphics/OrbitalDiagram'
 import { C, F, S } from '@/theme'
+import { PROJECT_START_URL } from '@/constants/links'
 
 const TICKER = [
   'Brand Identity',
@@ -148,7 +149,13 @@ export function HeroSection() {
                 flexWrap: 'wrap',
               }}
             >
-              <HoverButton variant="primary" label="Iniciar Projeto" />
+              <HoverButton
+                variant="primary"
+                label="Iniciar Projeto"
+                href={PROJECT_START_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              />
               <HoverButton variant="ghost" label="Ver Trabalhos" />
             </div>
 

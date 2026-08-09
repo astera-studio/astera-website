@@ -13,7 +13,7 @@ export function FooterLink({ label }: FooterLinkProps) {
       href="#"
       onMouseEnter={() => setH(true)}
       onMouseLeave={() => setH(false)}
-      style={{ fontFamily: F.body, fontSize: '0.63rem', letterSpacing: '0.15em', color: C.textPrimary, opacity: h ? 0.62 : 0.28, textDecoration: 'none', textTransform: 'uppercase', transition: 'opacity 0.3s' }}
+      style={{ fontFamily: F.body, fontSize: '0.64rem', fontWeight: 500, letterSpacing: '0.12em', color: C.textPrimary, opacity: h ? 0.8 : 0.48, textDecoration: 'none', textTransform: 'uppercase', transition: 'opacity 0.3s' }}
     >
       {label}
     </a>

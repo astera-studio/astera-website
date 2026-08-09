@@ -9,8 +9,8 @@ export function Footer() {
           <div style={{fontFamily: F.heading, fontWeight: 900, fontSize: '1.2rem', letterSpacing: '0.14em', color: C.textPrimary, marginBottom: '3px' }}>
             ASTERA
           </div>
-          <p style={{fontFamily: F.micro, fontSize: '0.6rem', letterSpacing: '0.14em', color: C.white, opacity: 0.26, textTransform: 'uppercase' }}>
-            Creative Studio
+          <p style={{fontFamily: F.micro, fontSize: '0.62rem', fontWeight: 500, letterSpacing: '0.12em', color: C.textPrimary, opacity: 0.48, textTransform: 'uppercase' }}>
+            Independent Creative Studio
           </p>
         </div>
 
@@ -20,8 +20,8 @@ export function Footer() {
           ))}
         </div>
 
-        <p style={{ fontFamily: F.micro, fontSize: '0.6rem', letterSpacing: '0.1em', color: C.textPrimary, opacity: 0.2 }}>
-          © 2024 ASTERA Studio
+        <p style={{ fontFamily: F.micro, fontSize: '0.62rem', fontWeight: 500, letterSpacing: '0.08em', color: C.textPrimary, opacity: 0.44 }}>
+          © 2026 ASTERA
         </p>
       </div>
     </footer>

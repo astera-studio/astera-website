@@ -5,12 +5,18 @@ type HoverButtonProps = {
   variant: 'primary' | 'ghost'
   label: string
   large?: boolean
+  href?: string
+  target?: '_blank'
+  rel?: string
 }
 
 export default function HoverButton({
   variant,
   label,
   large,
+  href,
+  target,
+  rel,
 }: HoverButtonProps) {
   const [hovered, setHovered] = useState(false)
 
@@ -18,6 +24,39 @@ export default function HoverButton({
   const fs = large ? '0.8rem' : '0.75rem'
 
   if (variant === 'primary') {
+    const style = {
+      backgroundColor: hovered ? C.textPrimary : C.accentPrimary,
+      color: C.canvas,
+      fontFamily: F.body,
+      fontWeight: 600,
+      fontSize: fs,
+      letterSpacing: '0.16em',
+      textTransform: 'uppercase' as const,
+      padding: pad,
+      border: 'none',
+      cursor: 'pointer',
+      transition: `background-color ${M.uiFeedback}`,
+      display: 'inline-block',
+      textDecoration: 'none',
+    }
+
+    if (href) {
+      return (
+        <a
+          href={href}
+          target={target}
+          rel={rel}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          onFocus={() => setHovered(true)}
+          onBlur={() => setHovered(false)}
+          style={style}
+        >
+          {label}
+        </a>
+      )
+    }
+
     return (
       <button
         type="button"
@@ -25,20 +64,7 @@ export default function HoverButton({
         onMouseLeave={() => setHovered(false)}
         onFocus={() => setHovered(true)}
         onBlur={() => setHovered(false)}
-        style={{
-          backgroundColor: hovered ? C.textPrimary : C.accentPrimary,
-          color: C.canvas,
-          fontFamily: F.body,
-          fontWeight: 600,
-          fontSize: fs,
-          letterSpacing: '0.16em',
-          textTransform: 'uppercase',
-          padding: pad,
-          border: 'none',
-          cursor: 'pointer',
-          transition: `background-color ${M.uiFeedback}`,
-          display: 'inline-block',
-        }}
+        style={style}
       >
         {label}
       </button>

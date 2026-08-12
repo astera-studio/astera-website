@@ -15,7 +15,7 @@ export function CtaSection() {
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', backgroundColor: C.lineSubtle }} />
 
       <div style={{ position: 'relative', maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
-        <p style={{ fontFamily: F.sans, fontSize: '0.64rem', fontWeight: 500, letterSpacing: '0.22em', color: C.turquoise, textTransform: 'uppercase', marginBottom: '2rem', opacity: 0.82 }}>
+        <p style={{ fontFamily: F.sans, fontSize: '0.64rem', fontWeight: 500, letterSpacing: '0.22em', color: C.accentTechnical, textTransform: 'uppercase', marginBottom: '2rem' }}>
           — Próximo Passo
         </p>
 
@@ -61,7 +61,7 @@ export function CtaSection() {
                 className="focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-[#467978] hover:opacity-100"
                 style={{ display: 'block', color: C.textPrimary, opacity: 0.76, textDecoration: 'none', transition: 'opacity 0.25s ease' }}
               >
-                <span style={{ display: 'block', fontFamily: F.sans, fontSize: '0.64rem', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '6px', color: C.turquoise }}>{contact.label}</span>
+                <span style={{ display: 'block', fontFamily: F.sans, fontSize: '0.64rem', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '6px', color: C.accentTechnical }}>{contact.label}</span>
                 <span style={{ display: 'block', fontFamily: F.sans, fontSize: '0.9rem', fontWeight: 500, lineHeight: 1.45 }}>{contact.value}</span>
               </a>
             </div>

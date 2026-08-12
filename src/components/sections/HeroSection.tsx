@@ -88,7 +88,7 @@ export function HeroSection() {
                   fontSize: '0.64rem',
                   fontWeight: 500,
                   letterSpacing: '0.22em',
-                  color: C.turquoise,
+                  color: C.accentTechnical,
                   textTransform: 'uppercase',
                 }}
               >

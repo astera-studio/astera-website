@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
-
 @import 'tailwindcss';
 
 @font-face {
@@ -14,7 +12,7 @@
   --color-canvas: #090909;
   --color-text-primary: #F4F1EA;
   --color-accent-primary: #E86A33;
-  --color-accent-technical: #467978;
+  --color-accent-technical: #4C8381;
   --color-line-subtle: rgba(244, 241, 234, 0.065);
   --color-surface-alternative: #0b0b0b;
 

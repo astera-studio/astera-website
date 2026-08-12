@@ -30,7 +30,7 @@ export function NavLink({ label, href, mobile = false, onClick }: NavLinkProps) 
         lineHeight: mobile ? 1.2 : undefined,
         letterSpacing: mobile ? '0.08em' : '0.18em',
         textTransform: 'uppercase',
-        color: hovered ? C.turquoise : C.white,
+        color: hovered ? C.accentTechnical : C.white,
         opacity: hovered ? 1 : 0.9,
         transition: 'color .25s ease, opacity .25s ease',
       }}

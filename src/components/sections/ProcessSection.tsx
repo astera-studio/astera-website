@@ -80,7 +80,7 @@ export function ProcessSection() {
                   }}
                 >
                   <span style={{ display: 'flex', alignItems: 'center', gap: '16px', minWidth: 0 }}>
-                    <span style={{ fontFamily: F.sans, fontSize: '0.64rem', fontWeight: 500, letterSpacing: '0.15em', color: active === i ? C.orange : C.turquoise, opacity: active === i ? 1 : 0.78, minWidth: '1.8rem' }}>
+                    <span style={{ fontFamily: F.sans, fontSize: '0.64rem', fontWeight: 500, letterSpacing: '0.15em', color: active === i ? C.orange : C.accentTechnical, minWidth: '1.8rem' }}>
                     {s.num}
                     </span>
                     <span style={{ fontFamily: F.display, fontWeight: 800, fontSize: 'clamp(1rem, 1.45vw, 1.25rem)', letterSpacing: 0, lineHeight: 1.1, textTransform: 'uppercase', color: active === i ? C.textPrimary : 'rgba(244,241,234,0.58)', textWrap: 'balance' }}>
@@ -118,7 +118,7 @@ export function ProcessSection() {
           </div>
 
           <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', padding: 'clamp(2rem, 4vw, 3.25rem)' }}>
-            <p style={{ fontFamily: F.sans, fontSize: '0.64rem', fontWeight: 500, letterSpacing: '0.22em', color: C.turquoise, textTransform: 'uppercase', marginBottom: '1rem' }}>
+            <p style={{ fontFamily: F.sans, fontSize: '0.64rem', fontWeight: 500, letterSpacing: '0.22em', color: C.accentTechnical, textTransform: 'uppercase', marginBottom: '1rem' }}>
               {step.num} — {step.subtitle}
             </p>
             <h3 style={{ fontFamily: F.display, fontWeight: 900, fontSize: 'clamp(1.9rem, 2.8vw, 2.6rem)', lineHeight: 1.05, textTransform: 'uppercase', color: C.textPrimary, letterSpacing: 0, marginBottom: '1.25rem', textWrap: 'balance' }}>

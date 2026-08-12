@@ -28,7 +28,7 @@ export function Footer() {
           ))}
         </div>
 
-        <p style={{ fontFamily: F.micro, fontSize: '0.62rem', fontWeight: 500, letterSpacing: '0.08em', color: C.textPrimary, opacity: 0.44 }}>
+        <p style={{ fontFamily: F.micro, fontSize: '0.62rem', fontWeight: 500, letterSpacing: '0.08em', color: C.textPrimary, opacity: 0.48 }}>
           © 2026 ASTERA
         </p>
       </div>

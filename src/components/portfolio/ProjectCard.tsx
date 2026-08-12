@@ -44,7 +44,7 @@ export function ProjectCard({ proj }: ProjectCardProps) {
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: 'clamp(1.25rem, 2vw, 2rem)' }}>
           <div style={{ transform: h ? 'translateY(0)' : 'translateY(4px)', transition: 'transform 0.4s ease' }}>
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: '0.65rem' }}>
-              <span style={{ fontFamily: F.metadata, fontSize: '0.66rem', fontWeight: 500, letterSpacing: '0.12em', color: C.turquoise }}>{proj.num}</span>
+              <span style={{ fontFamily: F.metadata, fontSize: '0.66rem', fontWeight: 500, letterSpacing: '0.12em', color: C.accentTechnical }}>{proj.num}</span>
             </div>
             <h3 style={{ fontFamily: F.display, fontWeight: 900, fontSize: 'clamp(1.2rem, 1.8vw, 1.6rem)', textTransform: 'uppercase', color: C.textPrimary, letterSpacing: 0, lineHeight: 1.08, marginBottom: '0.55rem', textWrap: 'balance' }}>
               {proj.title}

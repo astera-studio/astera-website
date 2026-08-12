@@ -25,7 +25,7 @@ export function ValueCard({ val }: ValueCardProps) {
       <div aria-hidden="true" style={{ fontFamily: F.sans, fontSize: '1.35rem', lineHeight: 1, color: C.turquoise, marginBottom: '1rem', opacity: h ? 0.92 : 0.66, transition: `opacity ${M.uiFeedback}` }}>
         {val.sym}
       </div>
-      <div style={{ fontFamily: F.sans, fontSize: '0.66rem', fontWeight: 500, letterSpacing: '0.12em', color: C.turquoise, opacity: 0.78, marginBottom: '0.75rem' }}>
+      <div style={{ fontFamily: F.sans, fontSize: '0.66rem', fontWeight: 500, letterSpacing: '0.12em', color: C.accentTechnical, marginBottom: '0.75rem' }}>
         {val.num}
       </div>
       <h3 style={{ fontFamily: F.display, fontWeight: 800, fontSize: 'clamp(1.05rem, 1.55vw, 1.3rem)', lineHeight: 1.1, textTransform: 'uppercase', color: C.textPrimary, letterSpacing: 0, marginBottom: '0.8rem', textWrap: 'balance' }}>

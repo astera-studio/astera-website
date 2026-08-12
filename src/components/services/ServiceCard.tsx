@@ -26,7 +26,7 @@ export function ServiceCard({ svc }: ServiceCardProps) {
         boxSizing: 'border-box',
       }}
     >
-      <div style={{ fontFamily: F.sans, fontSize: '0.64rem', fontWeight: 500, letterSpacing: '0.18em', color: C.turquoise, marginBottom: '1.25rem' }}>
+      <div style={{ fontFamily: F.sans, fontSize: '0.64rem', fontWeight: 500, letterSpacing: '0.18em', color: C.accentTechnical, marginBottom: '1.25rem' }}>
         {svc.num}
       </div>
 
@@ -45,7 +45,7 @@ export function ServiceCard({ svc }: ServiceCardProps) {
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: 'auto' }}>
         {svc.tags.map(tag => (
-          <span key={tag} style={{ fontFamily: F.sans, fontSize: '0.62rem', fontWeight: 500, letterSpacing: '0.1em', color: C.turquoise, border: '1px solid rgba(70,121,120,0.28)', padding: '5px 9px', textTransform: 'uppercase' }}>
+          <span key={tag} style={{ fontFamily: F.sans, fontSize: '0.62rem', fontWeight: 500, letterSpacing: '0.1em', color: C.accentTechnical, border: '1px solid rgba(70,121,120,0.28)', padding: '5px 9px', textTransform: 'uppercase' }}>
             {tag}
           </span>
         ))}

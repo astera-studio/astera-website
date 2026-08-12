@@ -27,6 +27,8 @@ export function AboutSection() {
         padding: `${S.sectionPaddingY} ${S.pageGutter}`,
       }}
     >
+      <h2 className="sr-only">Sobre a Astera</h2>
+
       {/* Identity */}
       <div
         className="grid grid-cols-1 md:grid-cols-3"
@@ -110,7 +112,7 @@ export function AboutSection() {
           </p>
         </div>
 
-        <h2
+        <h3
           style={{
             fontFamily: F.editorial,
             fontWeight: 600,
@@ -124,7 +126,7 @@ export function AboutSection() {
           }}
         >
           Acreditamos que marcas relevantes não são construídas por acaso.
-        </h2>
+        </h3>
 
         <p
           style={{

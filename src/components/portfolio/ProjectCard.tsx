@@ -17,12 +17,12 @@ export function ProjectCard({ proj }: ProjectCardProps) {
     <div
       onMouseEnter={() => setH(true)}
       onMouseLeave={() => setH(false)}
-      style={{ position: 'relative', overflow: 'hidden', cursor: 'pointer', backgroundColor: C.graphite }}
+      style={{ position: 'relative', overflow: 'hidden', backgroundColor: C.graphite }}
     >
       <div style={{ position: 'relative', paddingBottom: '66%', overflow: 'hidden' }}>
         <img
           src={proj.image}
-          alt={proj.title}
+          alt=""
           style={{
             position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
             transform: h ? 'scale(1.025)' : 'scale(1)',
@@ -31,7 +31,7 @@ export function ProjectCard({ proj }: ProjectCardProps) {
         />
 
         {/* Gradient overlay */}
-        <div style={{
+        <div aria-hidden="true" style={{
           position: 'absolute', inset: 0,
           background: metadataGradient,
           opacity: h ? 0.96 : 0.9,
@@ -54,7 +54,7 @@ export function ProjectCard({ proj }: ProjectCardProps) {
         </div>
 
         {/* View arrow */}
-        <div style={{
+        <div aria-hidden="true" style={{
           position: 'absolute', top: 'clamp(1rem, 2vw, 1.5rem)', right: 'clamp(1rem, 2vw, 1.5rem)',
           width: '38px', height: '38px', border: '1px solid rgba(244,241,234,0.25)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',

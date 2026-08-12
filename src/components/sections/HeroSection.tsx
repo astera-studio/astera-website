@@ -157,7 +157,7 @@ export function HeroSection() {
                 target="_blank"
                 rel="noopener noreferrer"
               />
-              <HoverButton variant="ghost" label="Ver Trabalhos" />
+              <HoverButton variant="ghost" label="Ver Trabalhos" href="#work" />
             </div>
 
             <div
@@ -210,6 +210,7 @@ export function HeroSection() {
 
       {/* Ticker */}
       <div
+        aria-hidden="true"
         style={{
           borderTop: `1px solid ${C.lineSubtle}`,
           overflow: 'hidden',
@@ -217,6 +218,7 @@ export function HeroSection() {
         }}
       >
         <div
+          className="hero-ticker-track"
           style={{
             display: 'flex',
             whiteSpace: 'nowrap',

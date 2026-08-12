@@ -22,7 +22,7 @@ export function ValueCard({ val }: ValueCardProps) {
         boxSizing: 'border-box',
       }}
     >
-      <div style={{ fontFamily: F.sans, fontSize: '1.35rem', lineHeight: 1, color: C.turquoise, marginBottom: '1rem', opacity: h ? 0.92 : 0.66, transition: `opacity ${M.uiFeedback}` }}>
+      <div aria-hidden="true" style={{ fontFamily: F.sans, fontSize: '1.35rem', lineHeight: 1, color: C.turquoise, marginBottom: '1rem', opacity: h ? 0.92 : 0.66, transition: `opacity ${M.uiFeedback}` }}>
         {val.sym}
       </div>
       <div style={{ fontFamily: F.sans, fontSize: '0.66rem', fontWeight: 500, letterSpacing: '0.12em', color: C.turquoise, opacity: 0.78, marginBottom: '0.75rem' }}>

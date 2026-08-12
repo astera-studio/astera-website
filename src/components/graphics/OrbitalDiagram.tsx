@@ -4,8 +4,11 @@ export default function OrbitalDiagram() {
 
   return (
     <svg
+      className="orbital-diagram"
       viewBox="0 0 600 600"
       xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      focusable="false"
       style={{ width: '100%', height: '100%' }}
     >
       <defs>
@@ -50,14 +53,14 @@ export default function OrbitalDiagram() {
       <line x1="300" y1="50"  x2="300" y2="550" stroke={C.white} strokeOpacity="0.03" strokeWidth="0.5" />
 
       {/* Orbital 1 — slow clockwise */}
-      <g style={{ transformOrigin: '300px 300px', animation: 'spin-orbital 45s linear infinite' }}>
+      <g data-orbit style={{ transformOrigin: '300px 300px', animation: 'spin-orbital 45s linear infinite' }}>
         <ellipse cx="300" cy="300" rx="235" ry="78" stroke={C.turquoise} strokeOpacity="0.28" strokeWidth="0.75" fill="none" />
         <circle cx="535" cy="300" r="7"  fill="url(#orangeGrad)" filter="url(#glowFx)" />
         <circle cx="535" cy="300" r="14" fill="none" stroke={C.orange} strokeOpacity="0.28" strokeWidth="0.75" />
       </g>
 
       {/* Orbital 2 — tilted, counter-clockwise */}
-      <g style={{ transformOrigin: '300px 300px', animation: 'spin-orbital 32s linear infinite reverse' }}>
+      <g data-orbit style={{ transformOrigin: '300px 300px', animation: 'spin-orbital 32s linear infinite reverse' }}>
         <ellipse cx="300" cy="300" rx="195" ry="64" stroke={C.turquoise} strokeOpacity="0.2" strokeWidth="0.75" fill="none" transform="rotate(40 300 300)" />
         <circle cx="300" cy="364" r="5"  fill={C.turquoise} filter="url(#subtleGlow)" />
         <circle cx="300" cy="364" r="10" fill="none" stroke={C.turquoise} strokeOpacity="0.35" strokeWidth="0.5" />
@@ -67,7 +70,7 @@ export default function OrbitalDiagram() {
       <circle cx="300" cy="300" r="158" stroke={C.white} strokeOpacity="0.06" strokeWidth="0.5" fill="none" />
 
       {/* Small inner orbital */}
-      <g style={{ transformOrigin: '300px 300px', animation: 'spin-orbital 22s linear infinite' }}>
+      <g data-orbit style={{ transformOrigin: '300px 300px', animation: 'spin-orbital 22s linear infinite' }}>
         <ellipse cx="300" cy="300" rx="100" ry="38" stroke={C.turquoise} strokeOpacity="0.38" strokeWidth="0.75" fill="none" transform="rotate(-55 300 300)" />
         <circle cx="300" cy="262" r="3.5" fill={C.white} fillOpacity="0.5" />
       </g>

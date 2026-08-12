@@ -2,6 +2,14 @@ import { C, F, S } from '@/theme'
 import { FooterLink } from './FooterLink'
 
 export function Footer() {
+  const links = [
+    { label: 'Sobre', href: '#about' },
+    { label: 'Serviços', href: '#services' },
+    { label: 'Trabalhos', href: '#work' },
+    { label: 'Processo', href: '#process' },
+    { label: 'Contato', href: '#contact' },
+  ]
+
   return (
     <footer style={{ backgroundColor: C.canvas, borderTop: `1px solid ${C.lineSubtle}`, padding: `2.5rem ${S.pageGutter}` }}>
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
@@ -15,8 +23,8 @@ export function Footer() {
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '24px' }}>
-          {['Sobre', 'Serviços', 'Trabalhos', 'Processo', 'Contato'].map(item => (
-            <FooterLink key={item} label={item} />
+          {links.map(link => (
+            <FooterLink key={link.href} label={link.label} href={link.href} />
           ))}
         </div>
 

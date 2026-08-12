@@ -12,14 +12,21 @@ import { C, F } from '@/theme'
 export default function App() {
   return (
     <div style={{ fontFamily: F.body, backgroundColor: C.canvas, color: C.textPrimary, overflowX: 'hidden' }}>
-      <Navigation />
-      <HeroSection />
-      <AboutSection />
-      <ServicesSection />
-      <ProcessSection />
-      <PortfolioSection />
-      <ValuesSection />
-      <CtaSection />
+      <a className="skip-link" href="#main-content">
+        Pular para o conteúdo
+      </a>
+      <header>
+        <Navigation />
+      </header>
+      <main id="main-content" tabIndex={-1}>
+        <HeroSection />
+        <AboutSection />
+        <ServicesSection />
+        <ProcessSection />
+        <PortfolioSection />
+        <ValuesSection />
+        <CtaSection />
+      </main>
       <Footer />
     </div>
   )

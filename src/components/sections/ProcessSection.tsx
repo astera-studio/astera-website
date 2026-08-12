@@ -56,21 +56,16 @@ export function ProcessSection() {
             >
               <button
                 type="button"
-                aria-pressed={active === i}
+                aria-expanded={active === i}
+                aria-controls={`process-step-${s.num}-description`}
                 aria-label={`${s.num} ${s.title}, ${s.subtitle}`}
                 onClick={() => setActive(i)}
-                onKeyDown={event => {
-                  if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault()
-                    setActive(i)
-                  }
-                }}
                 className="w-full focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-[#467978]"
                 style={{
                   display: 'block',
                   backgroundColor: 'transparent',
                   border: 'none',
-                  padding: '1.35rem 0',
+                  padding: active === i ? '1.35rem 0 0' : '1.35rem 0',
                   color: C.textPrimary,
                   textAlign: 'left',
                   cursor: 'pointer',
@@ -96,15 +91,16 @@ export function ProcessSection() {
                   {s.subtitle}
                   </span>
                 </span>
-
-                {active === i && (
-                  <span style={{ display: 'block', marginTop: '1rem', paddingLeft: 'calc(1.8rem + 16px)' }}>
-                    <span style={{ display: 'block', fontFamily: F.sans, fontSize: '0.92rem', fontWeight: 500, lineHeight: 1.7, color: 'rgba(244,241,234,0.62)', maxWidth: '520px' }}>
-                    {s.body}
-                    </span>
-                  </span>
-                )}
               </button>
+              <div
+                id={`process-step-${s.num}-description`}
+                hidden={active !== i}
+                style={{ paddingLeft: 'calc(1.8rem + 16px)', paddingBottom: '1.35rem' }}
+              >
+                <p style={{ fontFamily: F.sans, fontSize: '0.92rem', fontWeight: 500, lineHeight: 1.7, color: 'rgba(244,241,234,0.62)', maxWidth: '520px', marginTop: '1rem' }}>
+                  {s.body}
+                </p>
+              </div>
             </div>
           ))}
           <div style={{ borderTop: `1px solid ${C.lineSubtle}` }} />
@@ -113,7 +109,7 @@ export function ProcessSection() {
         {/* Visual panel */}
         <div
           className="hidden lg:flex items-center justify-center"
-          aria-live="polite"
+          aria-hidden="true"
           style={{ backgroundColor: 'rgba(70,121,120,0.032)', border: '1px solid rgba(70,121,120,0.14)', minHeight: '380px', position: 'relative', overflow: 'hidden' }}
         >
           {/* Ghost number */}

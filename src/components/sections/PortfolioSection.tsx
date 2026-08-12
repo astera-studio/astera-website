@@ -1,8 +1,7 @@
-import { useState } from 'react'
 import { SectionHeader } from '@/components/ui'
 import { ProjectCard } from '@/components/portfolio/ProjectCard'
 import type { Project } from '@/types'
-import { C, F, S } from '@/theme'
+import { C, S } from '@/theme'
 import visualSystemsImage from '@/assets/projects/visual-systems.png'
 import digitalSystemsImage from '@/assets/projects/digital-systems.png'
 import brandSystemsImage from '@/assets/projects/brand-systems.png'
@@ -41,8 +40,6 @@ const PROJECTS: Project[] = [
 ]
 
 export function PortfolioSection() {
-  const [linkH, setLinkH] = useState(false)
-
   return (
     <section
       id="work"
@@ -54,27 +51,7 @@ export function PortfolioSection() {
       <SectionHeader
         index="03"
         label="Trabalhos"
-        aside={
-          <a
-            href="#"
-            className="hidden md:block focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-[#467978]"
-            onMouseEnter={() => setLinkH(true)}
-            onMouseLeave={() => setLinkH(false)}
-            style={{
-              fontFamily: F.sans,
-              fontSize: '0.72rem',
-              fontWeight: 500,
-              letterSpacing: '0.12em',
-              color: C.textPrimary,
-              opacity: linkH ? 1 : 0.62,
-              textDecoration: 'none',
-              textTransform: 'uppercase',
-              transition: 'opacity 0.3s',
-            }}
-          >
-            Ver todos →
-          </a>
-        }
+        aside={<span aria-hidden="true" />}
       >
         Projetos
         <br />

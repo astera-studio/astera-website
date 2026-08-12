@@ -71,6 +71,43 @@ export default function HoverButton({
     )
   }
 
+  const ghostStyle = {
+    backgroundColor: 'transparent',
+    color: hovered ? C.textPrimary : 'rgba(244,241,234,0.68)',
+    fontFamily: F.body,
+    fontWeight: 500,
+    fontSize: fs,
+    letterSpacing: '0.16em',
+    textTransform: 'uppercase' as const,
+    padding: large ? '17px 52px' : '13px 36px',
+    border: `1px solid ${
+      hovered
+      ? 'rgba(244,241,234,0.42)'
+      : 'rgba(244,241,234,0.18)'
+      }`,
+    cursor: 'pointer',
+    transition: `border-color ${M.uiFeedback}, color ${M.uiFeedback}`,
+    display: 'inline-block',
+    textDecoration: 'none',
+  }
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target={target}
+        rel={rel}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        onFocus={() => setHovered(true)}
+        onBlur={() => setHovered(false)}
+        style={ghostStyle}
+      >
+        {label}
+      </a>
+    )
+  }
+
   return (
     <button
       type="button"
@@ -78,24 +115,7 @@ export default function HoverButton({
       onMouseLeave={() => setHovered(false)}
       onFocus={() => setHovered(true)}
       onBlur={() => setHovered(false)}
-      style={{
-        backgroundColor: 'transparent',
-        color: hovered ? C.textPrimary : 'rgba(244,241,234,0.68)',
-        fontFamily: F.body,
-        fontWeight: 500,
-        fontSize: fs,
-        letterSpacing: '0.16em',
-        textTransform: 'uppercase',
-        padding: large ? '17px 52px' : '13px 36px',
-        border: `1px solid ${
-          hovered
-          ? 'rgba(244,241,234,0.42)'
-          : 'rgba(244,241,234,0.18)'
-          }`,
-        cursor: 'pointer',
-        transition: `border-color ${M.uiFeedback}, color ${M.uiFeedback}`,
-        display: 'inline-block',
-      }}
+      style={ghostStyle}
     >
       {label}
     </button>

@@ -2,10 +2,10 @@ import { SectionHeader } from '@/components/ui'
 import { ProjectCard } from '@/components/portfolio/ProjectCard'
 import type { Project } from '@/types'
 import { C, S } from '@/theme'
-import visualSystemsImage from '@/assets/projects/visual-systems.png'
-import digitalSystemsImage from '@/assets/projects/digital-systems.png'
-import brandSystemsImage from '@/assets/projects/brand-systems.png'
-import experimentalImage from '@/assets/projects/experimental.png'
+import visualSystemsImage from '@/assets/projects/visual-systems.webp'
+import digitalSystemsImage from '@/assets/projects/digital-systems.webp'
+import brandSystemsImage from '@/assets/projects/brand-systems.webp'
+import experimentalImage from '@/assets/projects/experimental.webp'
 
 const PROJECTS: Project[] = [
   {

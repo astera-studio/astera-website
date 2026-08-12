@@ -23,6 +23,8 @@ export function ProjectCard({ proj }: ProjectCardProps) {
         <img
           src={proj.image}
           alt=""
+          loading="lazy"
+          decoding="async"
           style={{
             position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
             transform: h ? 'scale(1.025)' : 'scale(1)',

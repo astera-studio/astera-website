@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { HoverButton } from '@/components/ui'
 import OrbitalDiagram from '@/components/graphics/OrbitalDiagram'
 import { C, F, S } from '@/theme'
@@ -15,6 +16,20 @@ const TICKER = [
 ]
 
 export function HeroSection() {
+  const tickerTrackRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const tickerTrack = tickerTrackRef.current
+    if (!tickerTrack || typeof IntersectionObserver === 'undefined') return
+
+    const observer = new IntersectionObserver(([entry]) => {
+      tickerTrack.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused'
+    })
+
+    observer.observe(tickerTrack)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <section
       id="top"
@@ -218,6 +233,7 @@ export function HeroSection() {
         }}
       >
         <div
+          ref={tickerTrackRef}
           className="hero-ticker-track"
           style={{
             display: 'flex',

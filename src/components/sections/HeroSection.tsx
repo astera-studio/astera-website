@@ -152,9 +152,9 @@ export function HeroSection() {
                 marginBottom: '2.5rem',
               }}
             >
-              Um estúdio criativo independente onde arte, design e
-              tecnologia se encontram para criar experiências digitais
-              memoráveis.
+             Um estúdio criativo independente onde estratégia, design e tecnologia 
+             se encontram para criar experiências digitais com propósito e personalidade.
+
             </p>
 
             <div

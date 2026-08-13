@@ -34,8 +34,7 @@ export function CtaSection() {
         </h2>
 
         <p style={{ fontFamily: F.sans, fontSize: '0.95rem', fontWeight: 500, lineHeight: 1.7, color: 'rgba(244,241,234,0.64)', maxWidth: '490px', margin: '0 auto 3rem' }}>
-          Transformamos sua ideia em experiência digital que é lembrada.
-        </p>
+         Na Astera, cada experiência digital é feita para permanecer. </p>
 
         <HoverButton
           variant="primary"

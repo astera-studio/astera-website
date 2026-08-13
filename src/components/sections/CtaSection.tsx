@@ -19,10 +19,9 @@ export function CtaSection() {
           — Próximo Passo
         </p>
 
-        <h2 style={{
+        <h2 className="text-[1.05rem] sm:text-[clamp(1.3rem,3.5vw,3.75rem)]" style={{
           fontFamily: F.display,
           fontWeight: 900,
-          fontSize: 'clamp(1.3rem, 3.5vw, 3.75rem)',
           textTransform: 'uppercase',
           color: C.textPrimary,
           lineHeight: 1.02,

@@ -41,9 +41,13 @@ Transformar o export inicial do Figma Make em uma base profissional, organizada,
 - Vite configurado na porta 8443.
 - Refatoração incremental concluída nas Fases 1 e 2.
 - Ciclo de refinamento das seções da homepage concluído na Fase 3.
+- Fase 4 tecnicamente concluída, incluindo polimento transversal, acessibilidade, performance, configuração e prontidão para produção.
 - Navigation, Hero, About, Services, Process, Projects, Values, Contact e Footer foram refinados e validados responsivamente.
 - Navegação interna da homepage utiliza âncoras nativas com offset para o header fixo.
-- Próxima etapa concentrada em polimento transversal e preparação para produção.
+- Projeto classificado como `READY WITH PENDING LAUNCH CONFIG`.
+- Não existem bloqueadores técnicos conhecidos para deploy.
+- Configurações dependentes do domínio definitivo e do momento de lançamento permanecem pendentes.
+- Próxima etapa concentrada em Launch / Deploy.
 - Branch `refactor/astera-v1` utilizada para a refatoração.
 
 ---
@@ -317,6 +321,8 @@ e integrada através de `@font-face`.
 
 As imagens em `src/assets/projects` sustentam temporariamente a seção de Projetos Selecionados enquanto os estudos de caso reais da Astera são desenvolvidos. Esses materiais representam explorações criativas e não trabalhos concluídos para clientes.
 
+Os quatro artworks atuais utilizam WebP lossy com qualidade 88, preservando as dimensões de `1536×1024`. A conversão reduziu o peso total aproximado de `8,19 MiB` para `0,40 MiB`, uma redução de cerca de `95,1%`.
+
 ### Asset experimental retido
 
 O arquivo `src/assets/about/esfera.svg` permanece no repositório como asset de marca potencial, mas não integra a composição atual da seção About. A versão aprovada da seção permanece limpa, sem esfera animada e sem glow difuso.
@@ -566,7 +572,7 @@ foi evitada nos refinamentos aprovados por prejudicar a leitura.
 
 Esses textos utilizam pesos intermediários, aproximadamente `500`, mantendo a aparência técnica sem comprometer a legibilidade.
 
-A criação de tokens tipográficos semânticos adicionais permanece opcional para a Fase 4 e só deve ocorrer se padrões reais de reutilização justificarem a alteração.
+Os papéis tipográficos existentes permaneceram suficientes durante a Fase 4, sem necessidade de novos tokens preventivos.
 
 ## Contraste
 
@@ -714,7 +720,7 @@ Os projetos fictícios gerados no Figma, seus clientes e anos foram removidos. A
 3. `BRAND SYSTEMS` — Brand Identity · Editorial;
 4. `EXPERIMENTAL` — Creative Direction · Digital Art.
 
-Essas explorações não representam cases concluídos para clientes. O CTA `VER TODOS →` foi preservado para a futura integração dos estudos de caso reais.
+Essas explorações não representam cases concluídos para clientes. O CTA `VER TODOS →` foi removido temporariamente enquanto não existe um destino real para estudos de caso.
 
 As imagens mantêm suas cores originais. Os cards usam gradientes localizados na área de metadata, com tratamento específico para o artwork claro de Brand Systems. A grade permanece em duas colunas a partir do tablet e em uma coluna no mobile.
 
@@ -799,55 +805,189 @@ A conclusão da Fase 3 representa o encerramento do refinamento seção por seç
 
 ## Status
 
-⏳ Pendente
+✅ Concluída tecnicamente
 
-## Checklist
+Status de prontidão: `READY WITH PENDING LAUNCH CONFIG`.
 
-- revisar ritmo visual da página completa;
-- revisar consistência de espaçamento entre seções;
-- executar QA responsivo final em breakpoints e proporções representativas;
-- revisar acessibilidade, semântica HTML, navegação por teclado e estados de foco;
-- revisar comportamento com `prefers-reduced-motion`;
-- validar todos os links internos e externos, incluindo Footer e CTAs ainda provisórios;
-- revisar contraste e legibilidade em contexto de página completa;
-- avaliar conversão dos PNGs de Projects para WebP/AVIF quando apropriado;
-- otimizar imagens, SVGs e estratégia de carregamento;
-- revisar performance, loading e bundle;
-- revisar assets não utilizados e código experimental residual;
-- revisar os dois lockfiles e definir o gerenciador de pacotes autoritativo;
-- revisar configurações do Vite;
-- avaliar limpeza da configuração e das dependências herdadas do Figma Make;
-- revisar avisos relacionados ao `configLoader: native`;
-- revisar uso de `__dirname` no `vite.config.ts`;
-- revisar importação JSON utilizada pela configuração do Figma Make;
-- revisar metadata e fundamentos de SEO;
-- configurar Open Graph;
-- revisar e inserir favicon definitivo;
-- executar Lighthouse;
-- revisar analytics, se aplicável;
-- preparar configuração e checklist de deploy definitivo.
+Não existem bloqueadores técnicos conhecidos para deploy. Permanecem pendentes somente as configurações que dependem do domínio definitivo e do momento de lançamento. O site ainda não está publicado.
+
+---
+
+## 4.1 — QA visual e responsividade
+
+- sistema de spacing auditado transversalmente;
+- tokens `pageGutter` e `sectionPaddingY` preservados;
+- QA manual concluído em desktop, tablet landscape, tablet portrait e mobile;
+- composição visual aprovada sem necessidade de redesign estrutural;
+- CTA final validado em diferentes proporções de viewport;
+- design freeze da homepage preservado.
+
+---
+
+## 4.2 — Acessibilidade e semântica
+
+- shell semântico consolidado com `header`, um único `main` e skip link para `#main-content`;
+- landmarks e hierarquia de headings corrigidos;
+- CTA `Ver Trabalhos` convertido em link nativo funcional para `#work`;
+- CTA `VER TODOS →` removido temporariamente enquanto não existe destino real;
+- links do Footer associados aos destinos reais da homepage;
+- interação do Process preservada com botões nativos, `aria-expanded`, `aria-controls` e associação clara com o conteúdo expandido;
+- elementos puramente decorativos ocultados da árvore acessível quando apropriado;
+- suporte a `prefers-reduced-motion` ampliado para animações contínuas do Orbital Diagram e ticker;
+- ticker pausado por `IntersectionObserver` ao sair da viewport e retomado da posição anterior quando volta à Hero.
+
+---
+
+## 4.3 — Assets e performance
+
+- quatro artworks de Projects convertidos de PNG para WebP;
+- dimensões de `1536×1024` preservadas;
+- conversão WebP lossy realizada com qualidade 88;
+- peso total reduzido de aproximadamente `8,19 MiB` para `0,40 MiB`;
+- redução total aproximada de `95,1%`;
+- imagens de Projects configuradas com `loading="lazy"` e `decoding="async"`;
+- `srcSet` avaliado e deliberadamente adiado porque o ganho atual não justifica a complexidade adicional;
+- AVIF avaliado e considerado desnecessário neste momento;
+- ASTERAV1, logos SVG e `src/assets/about/esfera.svg` preservados.
+
+---
+
+## 4.4 — Limpeza técnica
+
+- npm consolidado como package manager autoritativo;
+- `package-lock.json` consolidado como único lockfile;
+- `pnpm-lock.yaml` removido;
+- integração operacional do Figma Make removida;
+- diretório `.figma/make` removido;
+- plugins específicos do Figma Make removidos do Vite;
+- metadata antes gerenciada pelo fluxo Figma migrada para configuração convencional em `index.html`;
+- `.mise.toml` mantido somente com Node 22;
+- script `typecheck` adicionado ao `package.json`;
+- configuração do Vite ajustada para ESM;
+- avisos relacionados a `configLoader: native`, `__dirname` e importação JSON resolvidos;
+- `resolveJsonModule` e `allowImportingTsExtensions` removidos após deixarem de ser necessários.
+
+O Figma Make permanece apenas como origem histórica do projeto e não integra o fluxo operacional atual.
+
+---
+
+## 4.5 — SEO e identidade do navegador
+
+- documento configurado com `lang="pt-BR"`;
+- title real: `Astera — Estúdio Criativo Independente`;
+- description real da Astera aplicada à metadata base;
+- Open Graph base e Twitter metadata configurados;
+- pacote oficial de favicon integrado;
+- `site.webmanifest`, Apple Touch Icon e ícones `192×192` e `512×512` configurados;
+- imagem Open Graph oficial em `1200×630` integrada;
+- `og:image` e `twitter:image` configurados;
+- `noindex, nofollow` e `robots.txt` com `Disallow: /` preservados intencionalmente durante a pré-produção.
+
+Permanecem pendentes para o lançamento:
+
+- domínio definitivo;
+- canonical;
+- `og:url`;
+- eventual URL absoluta para a imagem Open Graph;
+- liberação da indexação.
+
+---
+
+## 4.6 — Lighthouse e qualidade final
+
+### Desktop
+
+- Performance: 95;
+- Accessibility: 100;
+- Best Practices: 100;
+- SEO: 66;
+- LCP: `0,96 s`.
+
+### Mobile
+
+- Performance: 92;
+- Accessibility: 100;
+- Best Practices: 100;
+- SEO: 66;
+- LCP: `2,73 s`.
+
+### Métricas e ajustes finais
+
+- TBT de `0 ms` em desktop e mobile;
+- CLS praticamente zero;
+- carregamento de Google Fonts otimizado com links explícitos e `preconnect`;
+- microtipografia técnica atualizada para `accentTechnical #4C8381`;
+- contraste WCAG corrigido;
+- teal original `#467978` preservado nos elementos gráficos e decorativos.
+
+O score SEO 66 é esperado em pré-produção devido ao bloqueio deliberado de indexação. Ele não representa um problema estrutural de SEO e deverá mudar somente no lançamento.
+
+---
+
+## 4.7 — Production readiness
+
+### Status
+
+`READY WITH PENDING LAUNCH CONFIG`
+
+### Build
+
+- `npm run typecheck`: aprovado;
+- `npm run build`: aprovado;
+- nenhum erro relevante de console ou rede;
+- nenhum request quebrado;
+- build estático gerado em `dist`.
+
+### Ambiente
+
+- npm como package manager;
+- Node 22 LTS como referência de produção;
+- nenhuma environment variable obrigatória;
+- nenhuma credencial ou secret no projeto;
+- nenhum analytics ou tracking configurado atualmente.
+
+### Segurança
+
+- vulnerabilidade transitiva identificada em `nanoid@3.3.16`;
+- dependência introduzida por PostCSS/Vite no tooling de desenvolvimento;
+- sem impacto no runtime entregue ao navegador;
+- `npm audit --omit=dev` retorna zero vulnerabilidades;
+- vulnerabilidade não considerada bloqueadora para deploy e ainda não corrigida.
+
+---
+
+## 4.8 — Decisões deliberadamente adiadas
+
+- `srcSet` para Projects: adiado; o ganho atual não justifica a complexidade;
+- AVIF: não necessário neste momento;
+- analytics/tracking: pendente de decisão;
+- domínio, canonical e indexação: dependentes do lançamento;
+- manutenção de `src/assets/about/esfera.svg`: intencional, como asset potencial da marca atualmente não renderizado.
 
 ---
 
 # 16. Validação
 
-As Fases 1, 2 e o ciclo de homepage da Fase 3 foram validados continuamente com:
+As Fases 1, 2, 3 e 4 foram validadas continuamente com:
 
-- `npx tsc --noEmit`
+- `npm run typecheck`
 - `npm run build`
-- `npm run dev`
+- build de produção servido por `npm run preview`;
 - validação visual em desktop;
 - validação visual em mobile;
 - verificação de overflow horizontal;
 - validação dos componentes interativos;
+- auditorias Lighthouse em desktop e mobile;
+- verificação de console, rede e assets públicos;
+- `npm audit` e `npm audit --omit=dev`;
 - `git diff --check`;
 - `git status`.
 
-Durante a Fase 3 foram realizadas validações visuais das seções e interações em viewports mobile, tablet, desktop e desktop/tablet altos. A navegação interna, o menu responsivo, o processo interativo, o carregamento da ASTERAV1, os CTAs externos e o overflow horizontal também foram verificados.
+Durante as Fases 3 e 4 foram realizadas validações visuais das seções e interações em viewports mobile, tablet e desktop. A navegação interna, o menu responsivo, o processo interativo, o carregamento da ASTERAV1, os CTAs externos, o reduced motion, o overflow horizontal e o build de produção também foram verificados.
 
-O projeto permanece disponível através do Vite na porta `8443`.
+O projeto permanece disponível localmente através do Vite na porta `8443` e gera build estático validado em `dist`.
 
-Os avisos existentes do Vite permanecem documentados e não impedem atualmente o funcionamento da aplicação.
+Os avisos anteriormente relacionados à configuração herdada do Figma Make foram resolvidos.
 
 ---
 
@@ -877,27 +1017,29 @@ Até o momento, foram consolidadas as seguintes decisões:
 
 ---
 
-# 18. Próximos Passos
+# 18. Launch / Deploy
 
-1. Executar revisão visual transversal da página completa.
-2. Validar espaçamentos e transições entre seções sem reiniciar redesigns locais.
-3. Concluir revisão de acessibilidade, teclado, foco, reduced motion e semântica.
-4. Validar todos os links internos e externos ainda provisórios.
-5. Otimizar imagens, assets e carregamento.
-6. Avaliar conversão dos artworks PNG para formatos modernos.
-7. Revisar configuração do Vite e dependências herdadas do Figma Make.
-8. Resolver a definição do lockfile/gerenciador de pacotes autoritativo.
-9. Revisar favicon, metadata, SEO e Open Graph.
-10. Executar análise de bundle e Lighthouse.
-11. Preparar deploy e analytics, quando aplicável.
+## Próximos passos
+
+1. Conectar o repositório à Vercel.
+2. Configurar o deploy de produção.
+3. Validar o build no ambiente hospedado.
+4. Definir e conectar o domínio definitivo.
+5. Adicionar canonical.
+6. Adicionar `og:url`.
+7. Avaliar URL absoluta para `og:image`.
+8. Remover `noindex, nofollow`.
+9. Atualizar `robots.txt` para permitir indexação.
+10. Executar smoke test final no domínio real.
+11. Decidir posteriormente sobre analytics/tracking, se necessário.
 
 ---
 
 # 19. Direção para a Continuação
 
-A prioridade deixa de ser refinar cada seção isoladamente e passa a ser **validar o sistema visual como uma experiência completa e prepará-lo para produção**.
+A prioridade passa a ser **publicar e validar a experiência aprovada em um ambiente de produção**, sem reabrir o ciclo de refinamento visual encerrado nas Fases 3 e 4.
 
-A Hero permanece como referência visual para decisões transversais.
+A Hero permanece como referência visual para futuras evoluções.
 
 A partir dela, o restante do site deverá preservar:
 

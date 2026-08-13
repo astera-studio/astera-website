@@ -24,7 +24,7 @@ export function CtaSection() {
           fontWeight: 900,
           textTransform: 'uppercase',
           color: C.textPrimary,
-          lineHeight: 1.02,
+          lineHeight: 1.2,
           letterSpacing: 0,
           marginBottom: '2.5rem',
         }}>
@@ -34,7 +34,7 @@ export function CtaSection() {
         </h2>
 
         <p style={{ fontFamily: F.sans, fontSize: '0.95rem', fontWeight: 500, lineHeight: 1.7, color: 'rgba(244,241,234,0.64)', maxWidth: '490px', margin: '0 auto 3rem' }}>
-          Vamos transformar sua ideia em uma experiência digital que faça sentido para sua marca.
+          Transformamos sua ideia em experiência digital que é lembrada.
         </p>
 
         <HoverButton

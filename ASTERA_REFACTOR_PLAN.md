@@ -45,9 +45,10 @@ Transformar o export inicial do Figma Make em uma base profissional, organizada,
 - Navigation, Hero, About, Services, Process, Projects, Values, Contact e Footer foram refinados e validados responsivamente.
 - Navegação interna da homepage utiliza âncoras nativas com offset para o header fixo.
 - Projeto classificado como `READY WITH PENDING LAUNCH CONFIG`.
-- Não existem bloqueadores técnicos conhecidos para deploy.
+- Primeiro deploy real concluído e validado na Vercel como ambiente funcional de pré-produção.
+- Não existem bloqueadores técnicos conhecidos para o lançamento.
 - Configurações dependentes do domínio definitivo e do momento de lançamento permanecem pendentes.
-- Próxima etapa concentrada em Launch / Deploy.
+- Próxima etapa concentrada nas configurações exclusivas de lançamento.
 - Branch `refactor/astera-v1` utilizada para a refatoração.
 
 ---
@@ -809,7 +810,7 @@ A conclusão da Fase 3 representa o encerramento do refinamento seção por seç
 
 Status de prontidão: `READY WITH PENDING LAUNCH CONFIG`.
 
-Não existem bloqueadores técnicos conhecidos para deploy. Permanecem pendentes somente as configurações que dependem do domínio definitivo e do momento de lançamento. O site ainda não está publicado.
+Não existem bloqueadores técnicos conhecidos para o lançamento. O primeiro deploy real está funcional na Vercel como ambiente de pré-produção; permanecem pendentes somente as configurações que dependem do domínio definitivo e do momento de lançamento.
 
 ---
 
@@ -820,6 +821,9 @@ Não existem bloqueadores técnicos conhecidos para deploy. Permanecem pendentes
 - QA manual concluído em desktop, tablet landscape, tablet portrait e mobile;
 - composição visual aprovada sem necessidade de redesign estrutural;
 - CTA final validado em diferentes proporções de viewport;
+- smoke test em dispositivo móvel real concluído após o primeiro deploy;
+- heading da CTA ajustado exclusivamente abaixo de `sm` para `1.05rem` (`16.8px`), preservando `clamp(1.3rem, 3.5vw, 3.75rem)` a partir de `sm`;
+- ajuste validado em `320px`, `360px`, `375px` e `390px`, sem overflow horizontal e sem alterações em copy, tipografia, cores, botão ou contatos;
 - design freeze da homepage preservado.
 
 ---
@@ -946,6 +950,41 @@ O score SEO 66 é esperado em pré-produção devido ao bloqueio deliberado de i
 - nenhuma credencial ou secret no projeto;
 - nenhum analytics ou tracking configurado atualmente.
 
+### Primeiro deploy real
+
+- aplicação publicada com sucesso na Vercel em `https://astera-studio.vercel.app/`;
+- deploy conectado ao repositório GitHub existente;
+- framework/preset configurado como Vite;
+- npm utilizado como package manager autoritativo;
+- instalação e build concluídos corretamente no ambiente da Vercel;
+- output de produção gerado em `dist`;
+- nenhuma variável de ambiente necessária atualmente;
+- deploy tratado como pré-produção, não como domínio definitivo da Astera;
+- `noindex, nofollow` e bloqueio de indexação em `robots.txt` preservados deliberadamente.
+
+### Incidente pós-deploy — Git LFS
+
+O primeiro deploy revelou um problema que não aparecia localmente: os quatro artworks WebP de Projects eram servidos como imagens quebradas e a fonte local ASTERAV1 não era interpretada corretamente no ambiente publicado.
+
+A investigação confirmou que os seguintes arquivos estavam rastreados pelo Git LFS:
+
+- `src/assets/projects/visual-systems.webp`;
+- `src/assets/projects/digital-systems.webp`;
+- `src/assets/projects/brand-systems.webp`;
+- `src/assets/projects/experimental.webp`;
+- `src/assets/fonts/ASTERAV1.ttf`.
+
+O commit continha ponteiros LFS de aproximadamente 130 bytes em vez dos binários reais. O Vite concluía o build e copiava esses ponteiros como assets, mas o navegador não conseguia interpretá-los como imagens ou fonte válidas.
+
+A correção removeu de `.gitattributes` as regras globais de Git LFS para `*.webp` e `*.ttf` e reindexou os cinco arquivos como blobs Git normais. Os binários existentes foram preservados integralmente, sem alterações em imports, componentes, CSS, qualidade das imagens ou configuração da Vercel.
+
+Após commit, push e redeploy:
+
+- os quatro artworks voltaram a carregar corretamente;
+- ASTERAV1 voltou a renderizar corretamente;
+- o deploy foi validado novamente no ambiente publicado;
+- Git LFS deixou de fazer parte da estratégia para esses assets pequenos e essenciais ao runtime.
+
 ### Segurança
 
 - vulnerabilidade transitiva identificada em `nanoid@3.3.16`;
@@ -987,6 +1026,8 @@ Durante as Fases 3 e 4 foram realizadas validações visuais das seções e inte
 
 O projeto permanece disponível localmente através do Vite na porta `8443` e gera build estático validado em `dist`.
 
+O primeiro deploy real e o redeploy após a correção dos assets Git LFS foram validados na Vercel. Após as correções, não foram encontrados erros relevantes de console ou rede, requests quebrados ou falhas no carregamento dos artworks e da ASTERAV1. O smoke test pós-deploy incluiu dispositivo móvel real e as larguras `320px`, `360px`, `375px` e `390px`.
+
 Os avisos anteriormente relacionados à configuração herdada do Figma Make foram resolvidos.
 
 ---
@@ -1021,23 +1062,20 @@ Até o momento, foram consolidadas as seguintes decisões:
 
 ## Próximos passos
 
-1. Conectar o repositório à Vercel.
-2. Configurar o deploy de produção.
-3. Validar o build no ambiente hospedado.
-4. Definir e conectar o domínio definitivo.
-5. Adicionar canonical.
-6. Adicionar `og:url`.
-7. Avaliar URL absoluta para `og:image`.
-8. Remover `noindex, nofollow`.
-9. Atualizar `robots.txt` para permitir indexação.
-10. Executar smoke test final no domínio real.
-11. Decidir posteriormente sobre analytics/tracking, se necessário.
+1. Definir e conectar o domínio oficial.
+2. Adicionar canonical.
+3. Adicionar `og:url`.
+4. Avaliar URL absoluta definitiva para `og:image`.
+5. Remover `noindex, nofollow` no momento do lançamento.
+6. Atualizar `robots.txt` para permitir indexação.
+7. Executar smoke test final no domínio oficial.
+8. Decidir posteriormente sobre analytics/tracking, se necessário.
 
 ---
 
 # 19. Direção para a Continuação
 
-A prioridade passa a ser **publicar e validar a experiência aprovada em um ambiente de produção**, sem reabrir o ciclo de refinamento visual encerrado nas Fases 3 e 4.
+A prioridade passa a ser **concluir as configurações de lançamento no domínio oficial**, preservando a experiência já publicada e validada em pré-produção sem reabrir o ciclo de refinamento visual encerrado nas Fases 3 e 4.
 
 A Hero permanece como referência visual para futuras evoluções.
 

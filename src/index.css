@@ -53,9 +53,25 @@ section[id] {
   outline-offset: 4px;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid #4C8381;
+  outline-offset: 4px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
   }
 
   .skip-link {

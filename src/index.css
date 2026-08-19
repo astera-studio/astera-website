@@ -8,6 +8,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "DM Sans";
+  src: url("./assets/fonts/dm-sans-latin-variable.woff2") format("woff2");
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("./assets/fonts/playfair-display-latin-italic-variable.woff2") format("woff2");
+  font-weight: 400 600;
+  font-style: italic;
+  font-display: swap;
+}
+
 @theme {
   --color-canvas: #090909;
   --color-text-primary: #F4F1EA;

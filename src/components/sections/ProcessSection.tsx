@@ -73,13 +73,15 @@ export function ProcessSection() {
               >
                 <span
                   style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'minmax(0, 1fr) auto',
+                    display: 'flex',
+                    flexWrap: 'wrap',
                     alignItems: 'center',
-                    gap: '1rem',
+                    justifyContent: 'space-between',
+                    columnGap: '1rem',
+                    rowGap: '0.5rem',
                   }}
                 >
-                  <span style={{ display: 'flex', alignItems: 'center', gap: '16px', minWidth: 0 }}>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '16px', flex: '0 0 auto' }}>
                     <span style={{ fontFamily: F.sans, fontSize: '0.64rem', fontWeight: 500, letterSpacing: '0.15em', color: active === i ? C.orange : C.accentTechnical, minWidth: '1.8rem' }}>
                     {s.num}
                     </span>
@@ -87,7 +89,7 @@ export function ProcessSection() {
                     {s.title}
                     </span>
                   </span>
-                  <span style={{ fontFamily: F.serif, fontStyle: 'italic', fontSize: '0.86rem', lineHeight: 1.4, color: active === i ? 'rgba(244,241,234,0.78)' : 'rgba(244,241,234,0.52)', textAlign: 'right' }}>
+                  <span style={{ flexShrink: 0, marginLeft: 'auto', whiteSpace: 'nowrap', fontFamily: F.serif, fontStyle: 'italic', fontSize: '0.86rem', lineHeight: 1.4, color: active === i ? 'rgba(244,241,234,0.78)' : 'rgba(244,241,234,0.52)', textAlign: 'right' }}>
                   {s.subtitle}
                   </span>
                 </span>

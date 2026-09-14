@@ -11,3 +11,16 @@ logs/
 *.log
 .claude-replay.*
 .tmp-*
+.vercel/
+.netlify/
+*.local
+*.pem
+*.key
+*.p12
+*.pfx
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+*.swo
+*.bak

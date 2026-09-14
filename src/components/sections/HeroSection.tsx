@@ -172,7 +172,7 @@ export function HeroSection() {
                 target="_blank"
                 rel="noopener noreferrer"
               />
-              <HoverButton variant="ghost" label="Ver Trabalhos" href="#work" />
+              <HoverButton variant="ghost" label="Ver Trabalhos" href="https://www.behance.net/goastera/projects" target="_blank" rel="noopener noreferrer" />
             </div>
 
             <div

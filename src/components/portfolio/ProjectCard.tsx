@@ -14,10 +14,13 @@ export function ProjectCard({ proj }: ProjectCardProps) {
     : 'linear-gradient(to top, rgba(9,9,9,0.9) 0%, rgba(9,9,9,0.56) 25%, rgba(9,9,9,0.12) 49%, transparent 70%)'
 
   return (
-    <div
+    <a
+      href={proj.href}
+      target="_blank"
+      rel="noopener noreferrer"
       onMouseEnter={() => setH(true)}
       onMouseLeave={() => setH(false)}
-      style={{ position: 'relative', overflow: 'hidden', backgroundColor: C.graphite }}
+      style={{ display: 'block', color: 'inherit', textDecoration: 'none', position: 'relative', overflow: 'hidden', backgroundColor: C.graphite }}
     >
       <div style={{ position: 'relative', paddingBottom: '66%', overflow: 'hidden' }}>
         <img
@@ -67,6 +70,6 @@ export function ProjectCard({ proj }: ProjectCardProps) {
           ↗
         </div>
       </div>
-    </div>
+    </a>
   )
 }

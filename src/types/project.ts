@@ -4,5 +4,6 @@ export type Project = {
   title: string
   category: string
   image: string
+  href: string
   lightArtwork?: boolean
 }
